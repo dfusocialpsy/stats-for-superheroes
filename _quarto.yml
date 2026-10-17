@@ -1,6 +1,9 @@
 project:
-  type: default
+  type: website
   output-dir: _site
+
+website:
+  title: "Statistics for Superheroes"
 
 lang: de
 author: "Prof. Dr. David F. Urschler"
@@ -11,6 +14,7 @@ format:
     code-line-numbers: true
     chalkboard: true
     theme: batman1966-revealjs.scss
+    css: batman1966.css
     width: 1280
     height: 720
     margin: 0.06

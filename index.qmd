@@ -1,7 +1,8 @@
 ---
-title: "Folien Statistik"
-format: html
+title: "Statistics for Superheroes"
 ---
 
-- [02 R als Programmiersprache](02_r_language.html)
-- [03 Objekte in R](03_r_objekte.html)
+## Folien
+
+- [02 R Language](02_r_language.html)
+- [03 R Objekte](03_r_objekte.html)
