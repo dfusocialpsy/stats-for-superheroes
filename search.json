@@ -455,10 +455,10 @@
     "text": "Teil 4\n\n\n\nBerechnen Sie\n\nModus\nMedian\narithmetisches Mittel\nQuantile (p25, p75)\n\n\n\n\n\n\nAnzahl von „Das ist wichtig …” pro Vorlesung\n19, 23, 21, 18, 20, 19, 21, 22, 22, 19,\n20, 20, 20, 19, 20, 20, 23, 21, 19, 18"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Folien Statistik",
-    "section": "",
-    "text": "02 R als Programmiersprache\n03 Objekte in R"
+    "objectID": "index.html#folien",
+    "href": "index.html#folien",
+    "title": "Statistics for Superheroes",
+    "section": "Folien",
+    "text": "Folien\n\n02 R Language\n03 R Objekte"
   }
 ]
