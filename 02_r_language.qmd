@@ -1,0 +1,308 @@
+---
+title: "02 R als Programmiersprache"
+---
+
+
+
+
+## R als Programmiersprache
+
+-  *R* als Taschenrechner
+-  Logische Abfragen
+-  Funktionen
+-  Übung
+
+
+# R als Taschenrechner
+
+## R als Taschenrechner
+
+-   öffnen Sie ein neues *R*-Script
+-   speichern es unter Anwendung der „Good Practice" Empfehlungen
+
+## R als Taschenrechner
+
+*R*
+
+-   ersetzt nicht nur andere Statistik-Programme
+-   sondern auch Ihren Taschenrechner [BAM!]{.bam} 
+<br>
+
+::: {.fragment}
+*ABER*, *R* kann nicht Ihr Urteilsvermögen ersetzen! [OUCH!]{.ouch} 
+:::
+
+
+## R als Taschenrechner
+
+| Operator | Bedeutung | Operator | Bedeutung |
+|:--------:|:----------|:--------:|:----------|
+| `+` | Addition | `sqrt( )` | Quadratwurzel |
+| `-` | Subtraktion | `exp( )` | Exponentialfunktion $e^x$ |
+| `*` | Multiplikation | `log( )` | natürlicher Logarithmus |
+| `/` | Division | `sum( )` | Summe |
+| `^` | Potenz | `abs( )` | Betrag (absoluter Wert) |
+
+## R als Taschenrechner
+
+Machen wir die ersten Schritte
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+1 + 3 + 9
+1 - 5 * 3
+(1 - 5) * 3
+sqrt(9245)
+log(9245)
+```
+
+## R als Taschenrechner
+
+ *R* befolgt automatisch Rechenregeln  → darum Klammersetzung beachten!
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+1 - 5 * 3 # Punkt vor Strich
+(1 - 5) * 3 # Klammer zuerst
+```
+
+# Logische Abfragen
+
+## Logische Abfragen
+
+[Warum brauchen wir logische Abfragen?]{.bat-bubble .inverse}
+
+::: {.fragment}
+- Objekte zu vergleichen
+- Objekte zu verändern
+- in Funktionen 
+- ... 
+:::
+
+
+## Logische Abfragen
+
+
+
+| Operator | Bedeutung | Operator | Bedeutung |
+|:--------:|:----------|:--------:|:----------|
+| `==` | gleich | `!=` | ungleich |
+| `>` | größer | `<` | kleiner |
+| `>=` | größer gleich | `<=` | kleiner gleich |
+| `|` | oder | `&` | und |
+| `%in%` | befindet sich x in y | | |
+
+... prüfen, ob bestimmte logische Aussagen zutreffen
+
+## Logische Abfragen
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+3 > -1
+3 >= 3
+3 != 3
+3 < 2 | 2 < 3
+"R-Studio" == "hervorragend"
+"a" %in% "hervorragend"
+"a" %in% c("a", "b", "c")
+```
+
+Antwort ist binär → "richtig" = `TRUE` oder "falsch" = `FALSE` \
+Im Hindergrund wird `TRUE` eine `1` und `FALSE` eine `0` zugeordnet!
+
+# Funktionen
+
+## Funktionen
+
+[Warum brauchen wir Funktionen?]{.bat-bubble .inverse}
+
+-  erleichtern uns unser Leben in *R*
+-  für unterschiedlichste Anwendungen nutzbar
+-  Funktionen in Base-*R* als auch in Packages
+
+## Funktionen
+
+[Wie sind Funktionen aufgebaut?]{.bat-bubble .inverse}
+
+-  Funktionen beginnen immer mit einem Namen
+-  gefolgt von Klammern
+-  innerhalb der Klammern stehen Argumente
+
+Beispiel: `sum(x, na.rm = TRUE)`
+
+:::{.fragment}
+-  in den Argumenten stehen Defaults
+-  wir nutzen die Argumente zum Steuern der Funktion
+:::
+
+
+## Funktionen
+
+[Hilfe!]{.bat-bubble .inverse}
+
+- Funktionsnamen tippen → RStudio zeigt Vorschläge und eine Kurzbeschreibung
+- *F1* drücken für  ausführliche Hilfe
+
+Beispiel: `sum(x, na.rm = TRUE)`
+
+:::{.fragment}
+
+```{r}
+#| eval: false
+#| echo: true
+?sum()
+```
+:::
+
+
+## Funktionen
+
+Hier ein paar Beispiele
+
+-  `c( )` für combine (korrekt: *concatenate*)
+-  `mean( )` für den Mittelwert
+-  `round( )` für das Runden von Werten
+
+## Funktionen
+
+`c( )`
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+c(1, 4, 5, 2, 2, 534)
+```
+
+*R* „weiß", dass die Werte in der eingegebenen Reihenfolge zusammengehören
+
+## Funktionen
+
+`mean( )`
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+c(1, 4, 5, 2, 2, 534)
+mean(c(1, 4, 5, 2, 2, 534))
+```
+
+<br>
+
+- Funktionen können geschachtelt werden
+- zunächst wird die „innerste"  ausgeführt
+- danach die „nächst äußere" 
+
+## Funktionen
+
+`round( )`
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+c(1, 4, 5, 2, 2, 534)
+mean(c(1, 4, 5, 2, 2, 534))
+round(mean(c(1, 4, 5, 2, 2, 534)))
+```
+
+Schachteln von Funktionen kann schnell unübersichtlich werden!
+
+
+## Funktionen
+
+[Geht das auch übersichtlicher?]{.bat-bubble .inverse}
+
+Ja, mit der *Pipe* ` |> `
+
+Shortcut: cmd/strg + shift + m
+
+:::{.fragment}
+```{r}
+#| echo: true
+#| eval: false
+c(1, 4, 5, 2, 2, 534) |> 
+    mean() |> 
+    round()
+```
+:::
+
+
+# Übung
+
+## Teil 1
+
+1. installieren Sie das „psych" – Package
+
+2. Berechnen Sie:
+
+    a)  $(44 + 6 - 34) \cdot 12$
+    b)  $7 + 12 / 3$
+    c)  $\log(1.2)$
+    d)  runden Sie das Ergebnis von c) auf zwei Nachkommastellen
+    e)  $e^{7+4}$
+
+## Teil 2
+
+3. Wie lauten die Ergebnisse für die folgenden logischen Abfragen
+
+    a)  $9 = 12$
+    b)  $9 \neq 12$
+    c)  $78 \cdot 5 < 8984$
+
+4. Was bedeutet das „trim" Argument der `mean( )` Funktion
+
+## Teil 3
+
+::::: columns
+::: {.column width="55%"}
+5. Erstellen Sie folgende Häufigkeitstabellen
+
+    a) absolute Häufigkeit
+    b) relative Häufigkeit
+    c) absolute Summenhäufigkeit
+    d) relative Summenhäufigkeit
+    e) Prozentränge
+
+6. Erstellen Sie ein Histogramm!
+
+*Bonus* Erstellen Sie eine Treppenfunktion
+:::
+
+::: {.column width="45%"}
+::: {.callout-note appearance="simple" icon="false"}
+**Anzahl von „Das ist wichtig …" pro Vorlesung**
+
+19, 23, 21, 18, 20, 19, 21, 22, 22, 19,\
+20, 20, 20, 19, 20, 20, 23, 21, 19, 18
+:::
+:::
+:::::
+
+## Teil 4
+
+::::: columns
+::: {.column width="55%"}
+7. Berechnen Sie
+
+    a) Modus 
+    b) Median
+    c) arithmetisches Mittel
+    d) Quantile (p25, p75)
+:::
+
+::: {.column width="45%"}
+::: {.callout-note appearance="simple" icon="false"}
+**Anzahl von „Das ist wichtig …" pro Vorlesung**
+
+19, 23, 21, 18, 20, 19, 21, 22, 22, 19,\
+20, 20, 20, 19, 20, 20, 23, 21, 19, 18
+:::
+:::
+:::::

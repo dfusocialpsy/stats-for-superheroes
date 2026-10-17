@@ -1,0 +1,7 @@
+---
+title: "Folien Statistik"
+format: html
+---
+
+- [02 R als Programmiersprache](02_r_language.html)
+- [03 Objekte in R](03_r_objekte.html)

@@ -1,0 +1,680 @@
+---
+title: "03 Objekte"
+---
+
+
+## Objekte
+
+- Warum brauchen wir Objekte?
+- Welche Objekttypen gibt es?
+- Was kann ich mit Objekten machen?
+
+# Warum brauchen wir Objekte?
+
+## Warum brauchen wir Objekte?
+
+- R ist eine objektbasierte Sprache <br> 
+→ wir arbeiten die meiste Zeit mit Objekten
+- Objekte beinhalten („speichern") Informationen (Elemente) <br> 
+→ Information wird wiederverwertbar
+- Objekte können jederzeit entfernt werden: `rm(objekt)`
+
+
+::: {.callout-caution title="Achtung!"}
+Vergeben Sie niemals Objektnamen, die ident mit Funktionen sind, wie `mean <- my_object`
+:::
+
+## Erstellen eines Objekts
+
+Hierfür nutzen wir den "Assign-Operator" `<-` 
+
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+objekt_01 <- c(2, 4, 8)
+objekt_01
+```
+
+<br>
+Das Objekt erscheint im *Environment*-Fenster (RStudio) und kann aufgerufen werden.
+<br>
+Shortcut: "Option/Alt" + "-"
+
+
+# Welche Objekttypen gibt es?
+
+## Welche Objekttypen gibt es?
+
+- Scalar
+- Vector
+- Matrices und Dataframes
+- Lists
+
+## Scalar
+
+- Scalar ist die einfachste Objektart
+- besteht aus einem einzelnen Element
+- Werte können alles Mögliche sein (z.B. Zahl, Buchstabe, Ergebnis …)
+
+```{r}
+#| results: hold
+#| echo: true
+# Examples for numeric scalars
+a <- 7
+b <- 9 * 12
+c <- (a + b) / 4
+```
+
+## Scalar
+
+Nuten Sie für Text (`character`) immer Anführungszeichen!
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+#| error: true
+
+d <- "Statistik"
+e <- "Spaß"
+f <- "RStudio erleichtert mir ..."
+g <- Fehler
+```
+
+## Scalar
+
+- `numeric` und `character` Scalars werden unterschiedlich behandelt 
+- mathematische Operationen machen nur bei `numeric` Sinn! 
+
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+#| error: true
+
+# Numbers
+a_n <- 1
+b_n <- 2
+
+a_n + b_n
+```
+<br>
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+#| error: true
+
+# Characters
+a_c <- "1"
+b_c <- "2"
+
+a_c + b_c
+```
+
+
+
+## Vector
+
+- Vektoren sind kombinierte Scalars
+- bestehen aus mehreren Elementen\
+    z.B. die Zahlen von 1 bis 10
+- können nur Elemente eines Typs enthalten
+- bei unterschiedlichen Typen kommt es zur „Zwangstransformation"
+
+
+## Exkurs: Vector types
+
+| Typ         | Bedeutung                  |
+|:------------|:---------------------------|
+| `double`    | alle Zahlen                |
+| `integer`   | Zahlen ohne Dezimalstellen |
+| `character` | Text                       |
+| `logical`   | `TRUE` vs. `FALSE`         |
+| `complex`   | komplexe Zahlen            |
+| `raw`       | Raw Bytes von Daten        |
+
+## Wie erstelle ich einen Vector?
+
+| Funktion | Beispiel | Ergebnis |
+|:--------------------|:--------------------------|:-------------------|
+| `c(a, b, ...)` | `c(1, 5, 9)` | 1, 5, 9 |
+| `a:b` | `1:5` | 1, 2, 3, 4, 5 |
+| `seq(from, to, by, length.out)` | `seq(from = 0, to = 6, by = 2)` | 0, 2, 4, 6 |
+| `rep(x, times, each, length.out)` | `rep(c(7, 8), times = 2, each = 2)` | 7, 7, 8, 8, 7, 7, 8, 8 |
+
+## Erstellen wir ein paar Vektoren
+
+[Oh, ich platze gleich vor Vorfreude.]{.bat-bubble .inverse}
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+# Create numeric vectors
+a <- c(1, 2, 3, 4, 5)
+# Show result
+a
+
+e <- 1:5
+e
+
+f <- 5:1
+f
+
+g <- 1.4:4.4
+g
+```
+
+## Mit welchem Vektortyp habe ich es zu tun?
+
+Hierfür nutzen wir die `typof()`-Funktion
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+a <- c(1, 2, 3, 4, 5)
+typeof(a)
+```
+
+## Wie war das mit der "Zangstransformation"
+
+[Welcher Ganove hat meine Zahlen durcheinander gebracht?]{.bat-bubble .inverse}
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+xy <- c(1, 2, 3, "4")
+
+typeof(xy)
+```
+
+## Wie viele Elemente sind in meinem Vektor?
+
+Hierfür nutzen wir die `length()`-Funktion
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+w <- seq(from = 1,
+         to = 83,
+         by = 7)
+
+w
+
+# How many objects contains vector "w"?
+length(w)
+```
+
+
+
+## Wie müssen wir möglichst wenig tippen?
+
+[Endlich etwas Vernünftiges!]{.bat-bubble .inverse}
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+
+c(
+    "a", "b", "a", "b", 
+    "a", "b", "a", "b",
+    "a", "b", "a", "b",
+    "a", "b", "a", "b",
+    "a", "b","a",  "b"
+)
+```
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+z <- rep(c("a", "b"),
+         times = 10)
+z
+
+z_01 <- rep(1:3,
+            length.out = 8)
+z_01
+```
+
+## Wie verbinden wir Vektoren?
+
+Hierfür nutzen wir ganz einfach die `c()`-Funktion, die wir schon kennen
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+a <- c(1, 2, 3, 4, 5)
+b <- c(5, 6, 7)
+
+# Combine vectors
+d <- c(a, b)
+d
+```
+
+
+
+## Wie finde ich heraus ob Werte fehlen?
+
+[Welcher Ganove hat Elemente entwendet?]{.bat-bubble .inverse}
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+a <- c(1:4, NA, 4:1, NA)
+a
+
+# Check whether a vector includes NAs
+is.na(a)
+
+# Check position of NAs
+which(is.na(a))
+```
+
+Fehlende Werte werden in *R* als `NA` bezeichnet
+
+## Übung – Teil 1
+
+1.  Erstellen Sie einen Vektor namens „dreisprung".\
+ Der Vektor soll die Zahlen von 1 bis 31 (in 3er-Schritten) enthalten.\
+2.  Erstellen Sie einen Vektor namens „einssieben".\
+ Der Vektor soll Werte 1 bis 7 haben.\
+ Jeder Wert soll 3-mal hintereinander angezeigt werden.\
+  Der Vektor soll exakt 20 Elemente enthalten.
+3.  Generieren Sie einen Vektor namens „verbund" aus den Vektoren „dreisprung" und „einssieben".
+
+## Übung – Teil 2
+
+4.  Erstellen Sie einen Vektor namens „meine_info". \
+Der Vektor soll Ihren Vor- und Nachnamen sowie Ihr Geburtsjahr enthalten.
+5.  Wie viele Elemente beinhaltet der Vektor „meine_info"?
+6.  Bestimmen Sie den Vektortyp von „meine_info".
+7.  Addieren Sie 1 zu „meine_info". \
+Welches Ergebnis erhalten Sie? Diskutieren Sie dieses.
+
+## Übung – Teil 3
+
+::::: columns
+::: {.column width="55%"}
+Berechnen bzw. erstellen Sie
+
+- Range
+- Interquartilsabstand
+- Varianz
+- Standardabweichung
+- einen Boxplot
+:::
+
+::: {.column width="45%"}
+::: {.callout-note appearance="simple" icon="false"}
+**Anzahl von „Das ist wichtig …" pro Vorlesung**
+
+19, 23, 21, 18, 20, 19, 21, 22, 22, 19, 20, 20, 20, 19, 20, 20, 23, 21, 19, 18
+:::
+:::
+:::::
+
+## Matrices und Dataframes
+
+- beide stellen Daten zweidimensional dar (vgl. Excel)
+- Matrizen können nur einen Typ von Daten enthalten
+- Dataframes können mehrere Typen gleichzeitig enthalten
+- Warum überhaupt Matrizen nutzen?
+
+[Holy Matrices]{.bat-bubble .inverse}
+
+## Wie verbinde ich Vektoren zu einer Matrix?
+
+| Funktion | Beschreibung | Beispiel |
+|:-----------------|:----------------------------|:--------------------------|
+| `cbind(a, b, c)` | Überträgt Vektoren als Spalten in eine Matrix | `cbind(1:5, 6:10, 11:15)` |
+| `rbind(a, b, c)` | Überträgt Vektoren als Zeilen in eine Matrix | `rbind(1:5, 6:10, 11:15)` |
+
+## Wie erstelle ich Matrices und Dataframes
+
+| Funktion | Beschreibung | Beispiel |
+|:-----------------|:-------------------------|:----------------------------|
+| `matrix(x, nrow,ncol, byrow)` | Erstellt eine Matrix basierend auf Vektor x | `matrix(x = 1:12, nrow = 3, ncol = 4)` |
+| `data.frame()` | Erstellt einen Dataframe. Die Spaltennamen werden definiert. | `data.frame("age" = c(20, 24), "sex" = c("m", "w"), "pkt" = c(55, 60))` |
+
+## Hier zwei Beispiele zur Vektorverbindung
+
+für "spaltenweise"
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+# Create matrix by columns
+a <- 1:5
+b <- 6:10
+c <- 11:15
+
+cbind(a, b, c)
+```
+
+und hier für "zeilenweise"
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+# Create matrix by rows
+a <- 1:5
+b <- 6:10
+c <- 11:15
+
+rbind(a, b, c)
+```
+
+## Erstellen einer Matrix
+
+Hierfür nutzen wir die `matrix`-Funktion
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+# Create a matrix of the integers 1:10,
+# with 5 rows and 2 columns
+matrix(data = 1:10,
+       nrow = 5,
+       ncol = 2)
+
+# Now with 2 rows and 5 columns
+matrix(data = 1:10,
+       nrow = 2,
+       ncol = 5)
+```
+
+## Erstellen eines data frames 
+
+Hierfür nutzen wir die `data.frame`-Funktion
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+# Create a dataframe
+data.frame(id = 1:3,
+           gen = c("w", "m", "d"),
+           p_t01 = c(50, 59, 51),
+           p_t02 = c(53, NA, 54))
+```
+
+## Wie finde ich mich zurecht?
+
+| Funktion | Beschreibung | Beispiel |
+|:--------------|:---------------------------------|:--------------|
+| `names()` | Zeigt uns die Spaltennamen | `names(mtcars)` |
+| `View()` | Zeigt mir den  Datensatz | `View(mtcars)` |
+| `str()` | Zeigt mir die Struktur eines Datensatzes | `str(mtcars)` |
+| `$` | Wält eine Spalte aus | `mtcars$mpg` |
+| `nrow()` | Anzahl der Zeilen eines Datensatzes  | `nrow(mtcars)` |
+| `ncol()` | Anzahl der Spalten eines Datensatzes | `ncol(mtcars)` |
+
+## Wie bekomme ich eine Zusammenfassung?
+
+| Funktion | Beschreibung | Beispiel |
+|:--------------|:----------------------------------|:----------------|
+| `head()` | Zeigt mir die ersten Zeilen | `head(mtcars)` |
+| `tail()` | Zeigt mir die letzten Zeilen | `tail(mtcars)` |
+| `table()` | Tabellarische Zusammenfassung einer Spalte | `table(mtcars$am)` |
+| `summary()` | Zeigt mir eine Zusammenfassung eines Datensatzes; funktioniert auch für einzelne Spalten | `summary(mtcars)`, `summary(mtcars$mpg)` |
+
+
+
+## Dataframes – Übung
+
+1.  Wie heißen die Spalten des Datensatzes „ToothGrowth"?
+2.  Sehen Sie sich die ersten Zeilen von „ToothGrowth" an.
+3.  Lassen Sie sich eine Zusammenfassung der Spalte „len" aus dem Datensatz „ToothGrowth" anzeigen. Welche Werte sehen Sie und was können diese bedeuten?
+
+# Was kann ich mit Objekten machen?
+
+## Was kann ich mit Objekten machen?
+
+- Einzelne Werte (Elemente) auswählen [Wow!]{.bat-bubble .inverse .right}
+- Berechnungen anstellen [Wer hätte das wohl gedacht!?]{.bat-bubble .inverse}
+- ... und noch vieles mehr 
+
+## Wie wähle ich ein Element aus?
+
+[Wie finde ich den Ganoven?]{.bat-bubble .inverse .right}
+
+- Einzelne Elemente innerhalb eines Vektors werden mit `[ ]` indiziert
+- z.B. möchte ich das 66. Element eines Vekotrs wissen
+- Teildatensätze erstellen
+
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+# Ermöglicht eine Reproduktion
+set.seed(123)   
+# Erstellen eines Vectors
+vec_ft <- sample(
+    x = 1:1000,
+    size = 100,
+    replace = FALSE
+)
+# Wert des 66. Elements
+vec_ft[66]
+```
+
+## Wie wähle ich mehrere Elemente aus?
+
+- Es können auch mehrere Elemente mittels `[ ]` indiziert werden
+- z.B. möchte ich das 11. und 22. Objekt eines Vektors
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+vec_ft[c(11, 22)]
+```
+
+## Muss ich immer alles Tippen?
+
+- Es können auch mehrere Elemente mittels `[ ]` indiziert werden
+- Es können auch Objekte zum Indizieren genutzt werden
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+# Werte des 11., 22., 33. und 44. Elemets
+
+# Erstellen eines "Auswahlobjektes"
+el_to_ff <- c(11, 22, 33, 44)   
+
+vec_ft[el_to_ff]
+vec_ft[c(11, 22, 33, 44)]
+```
+
+## Wie wähle ich aus zweidimensionalen Daten aus?
+
+[Das wollte ich immer schon wissen!]{.bat-bubble .inverse .right}
+
+## Lass uns einen Datensatz erstellen 
+
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+set.seed(123)
+df_ft <- data.frame(
+    id = 1:100,
+    gen = sample(
+        x = c("fem", "mal"),
+        size = 100,
+        replace = TRUE),
+    age = sample(x = 19:31,
+                size = 100,
+                replace = TRUE),
+    eg_cg = sample(
+        x = c("eg", "cg"),
+        size = 100,
+        replace = TRUE),
+    p_t01 = sample(
+        x = 1:100,
+        size = 100,
+        replace = TRUE),
+    p_t02 = sample(
+        x = 1:100,
+        size = 100,
+        replace = TRUE)
+)
+```
+
+## Wie wähle ich nun aus Datensätzen aus?
+
+- Die Indizierung funktioniert wieder mittels `[ ]`
+- da data frames zweidimensional sind, müssen wir Zeilen und Spalten indizieren, daher `[zeile, spalte]`
+
+
+::: {.callout-tip title="Merke"} 
+Zeilen zuerst!
+:::
+
+
+## Wie sieht der Spass aus?
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+#| eval: false
+# Wähle den Wert in der 2. Zeile 
+# und 4. Spalte aus
+df_ft[2, 4]
+
+# Wähle die Zeilen 80 bis 90 
+# und die Spalte "age" aus
+df_ft[80:90, "age"]
+
+# Wähle Zeilen mithilfe eines 
+# Objekts (el_to_ff) und die letzte Spalte aus
+df_ft[el_to_ff, ncol(df_ft)]
+
+# Wähle alle Teilnehmenden aus, 
+# die in el_to_ff enthalten sind
+df_ft[el_to_ff, ]
+```
+
+## Berechnen
+
+[*R* ist vektorbasiert]{.bat-bubble .inverse}
+
+[Was bedeuted das für uns?]{.bat-bubble .right}
+
+[Wir sparen uns viel Arbeit!]{.bat-bubble .inverse}
+
+## Erstellen wir Vektoren
+
+[Na endlich!]{.bat-bubble .inverse}
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+set.seed(123)
+a <- sample(1:50, 20, T)
+
+set.seed(321)
+b <- sample(1:50, 20, T)
+```
+
+## Was kann ich nun schönes berechnen?
+
+[Das werden wir gleich sehen!]{.bat-bubble .inverse}
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+a + 1000
+```
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+a - b
+```
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+# Addiere 100 zu den Elementen von a, 
+# die größer als 30 sind
+a[a > 30] <- a[a > 30] + 100
+a
+```
+
+## Rechnen mit Datasätzen
+
+[Lass uns noch schnell ein paar "Fehler" einbauen.]{.bat-bubble .inverse}
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+
+# Stelle sicher, dass wir unsere 
+# Ergebnisse reproduzieren können
+set.seed(1)
+# Wähle 5 Zahlen (Zeilen) aus
+p_t01_na <- sample(1:100, 5, F)
+
+set.seed(2)
+p_t02_na <- sample(1:100, 5, F)
+
+# Füge fehlende Werte hinzu
+df_ft[p_t01_na, "p_t01"] <- NA
+df_ft[p_t02_na, "p_t02"] <- NA
+```
+
+## Lass uns den Unterschied berechnen
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+# Berechne die Veränderung zwischen 
+# p_t02 und p_t01
+head(df_ft$p_t02 - df_ft$p_t01)
+
+# Füge dem Data Frame eine neue 
+# Spalte "change" hinzu
+df_ft$change <- df_ft$p_t02 - df_ft$p_t01
+```
+
+## Übung I
+
+1.  Erstellen Sie einen Datensatz namens „df_st".<br>
+Der Datensatz soll simulierte Daten von 100 Studierenden enthalten, die zu Beginn bzw. zu Ende des ersten Semesters nach ihren R-Kenntnissen befragt werden.<br> 
+Die R-Kenntnisse werden mittels der *R*-Scale erfasst, die Werte von 0 (keine Kenntnisse) bis 5 (sehr gute Kenntnisse) hat.<br>
+Nutzen Sie hierfür die `sample()`-Funktion.<br> 
+Die Spalten im „df_st" sollen die folgenden Namen haben: `id`, `r_t1` und `r_t2`.<br>
+Nutzen Sie die `set.seed()`-Funktion, um sicherzustellen, dass die gleichen zufälligen Zahlen ausgewählt werden. Nutzen Sie den seed 1.
+
+## Übung II
+
+2.  Berechnen Sie, ob sich die R-Kenntnisse über das Semester verbessert haben. Wenn sich die Kenntnisse verbessert haben, dann ist die Differenz zwischen `r_t2` und `r_t1` positiv.<br>
+Fügen Sie das Ergebnis als neue Spalte „diff" zum data frame hinzu.
+3.  Sehen Sie sich die ersten sechs Zeilen des data frames an.
+4.  Berechnen Sie die absolute Häufigkeit von Studierenden, bei denen sich die Kenntnisse verbessert haben. Nutzen Sie hierfür die `sum()`-Funktion.
+5.  Welche R-Kenntnisse zu Beginn und welche Differenzwerte haben die Personen 4 und 73?
