@@ -1,0 +1,464 @@
+[
+  {
+    "objectID": "03_r_objekte.html#objekte",
+    "href": "03_r_objekte.html#objekte",
+    "title": "03 Objekte",
+    "section": "Objekte",
+    "text": "Objekte\n\nWarum brauchen wir Objekte?\nWelche Objekttypen gibt es?\nWas kann ich mit Objekten machen?"
+  },
+  {
+    "objectID": "03_r_objekte.html#warum-brauchen-wir-objekte-1",
+    "href": "03_r_objekte.html#warum-brauchen-wir-objekte-1",
+    "title": "03 Objekte",
+    "section": "Warum brauchen wir Objekte?",
+    "text": "Warum brauchen wir Objekte?\n\nR ist eine objektbasierte Sprache  → wir arbeiten die meiste Zeit mit Objekten\nObjekte beinhalten („speichern”) Informationen (Elemente)  → Information wird wiederverwertbar\nObjekte können jederzeit entfernt werden: rm(objekt)\n\n\n\n\n\n\n\n\nAchtung!\n\n\nVergeben Sie niemals Objektnamen, die ident mit Funktionen sind, wie mean &lt;- my_object"
+  },
+  {
+    "objectID": "03_r_objekte.html#erstellen-eines-objekts",
+    "href": "03_r_objekte.html#erstellen-eines-objekts",
+    "title": "03 Objekte",
+    "section": "Erstellen eines Objekts",
+    "text": "Erstellen eines Objekts\nHierfür nutzen wir den “Assign-Operator” &lt;-\n\n\nobjekt_01 &lt;- c(2, 4, 8)\nobjekt_01\n\n\n[1] 2 4 8\n\n\n Das Objekt erscheint im Environment-Fenster (RStudio) und kann aufgerufen werden.  Shortcut: “Option/Alt” + “-”"
+  },
+  {
+    "objectID": "03_r_objekte.html#welche-objekttypen-gibt-es-1",
+    "href": "03_r_objekte.html#welche-objekttypen-gibt-es-1",
+    "title": "03 Objekte",
+    "section": "Welche Objekttypen gibt es?",
+    "text": "Welche Objekttypen gibt es?\n\nScalar\nVector\nMatrices und Dataframes\nLists"
+  },
+  {
+    "objectID": "03_r_objekte.html#scalar",
+    "href": "03_r_objekte.html#scalar",
+    "title": "03 Objekte",
+    "section": "Scalar",
+    "text": "Scalar\n\nScalar ist die einfachste Objektart\nbesteht aus einem einzelnen Element\nWerte können alles Mögliche sein (z.B. Zahl, Buchstabe, Ergebnis …)\n\n\n# Examples for numeric scalars\na &lt;- 7\nb &lt;- 9 * 12\nc &lt;- (a + b) / 4"
+  },
+  {
+    "objectID": "03_r_objekte.html#scalar-1",
+    "href": "03_r_objekte.html#scalar-1",
+    "title": "03 Objekte",
+    "section": "Scalar",
+    "text": "Scalar\nNuten Sie für Text (character) immer Anführungszeichen!\n\n\nd &lt;- \"Statistik\"\ne &lt;- \"Spaß\"\nf &lt;- \"RStudio erleichtert mir ...\"\ng &lt;- Fehler\n\n\nError:\n! object 'Fehler' not found"
+  },
+  {
+    "objectID": "03_r_objekte.html#scalar-2",
+    "href": "03_r_objekte.html#scalar-2",
+    "title": "03 Objekte",
+    "section": "Scalar",
+    "text": "Scalar\n\nnumeric und character Scalars werden unterschiedlich behandelt\nmathematische Operationen machen nur bei numeric Sinn!\n\n\n\n# Numbers\na_n &lt;- 1\nb_n &lt;- 2\n\na_n + b_n\n\n\n[1] 3\n\n\n\n\n\n# Characters\na_c &lt;- \"1\"\nb_c &lt;- \"2\"\n\na_c + b_c\n\n\nError in `a_c + b_c`:\n! non-numeric argument to binary operator"
+  },
+  {
+    "objectID": "03_r_objekte.html#vector",
+    "href": "03_r_objekte.html#vector",
+    "title": "03 Objekte",
+    "section": "Vector",
+    "text": "Vector\n\nVektoren sind kombinierte Scalars\nbestehen aus mehreren Elementen\nz.B. die Zahlen von 1 bis 10\nkönnen nur Elemente eines Typs enthalten\nbei unterschiedlichen Typen kommt es zur „Zwangstransformation”"
+  },
+  {
+    "objectID": "03_r_objekte.html#exkurs-vector-types",
+    "href": "03_r_objekte.html#exkurs-vector-types",
+    "title": "03 Objekte",
+    "section": "Exkurs: Vector types",
+    "text": "Exkurs: Vector types\n\n\n\nTyp\nBedeutung\n\n\n\n\ndouble\nalle Zahlen\n\n\ninteger\nZahlen ohne Dezimalstellen\n\n\ncharacter\nText\n\n\nlogical\nTRUE vs. FALSE\n\n\ncomplex\nkomplexe Zahlen\n\n\nraw\nRaw Bytes von Daten"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-erstelle-ich-einen-vector",
+    "href": "03_r_objekte.html#wie-erstelle-ich-einen-vector",
+    "title": "03 Objekte",
+    "section": "Wie erstelle ich einen Vector?",
+    "text": "Wie erstelle ich einen Vector?\n\n\n\n\n\n\n\n\nFunktion\nBeispiel\nErgebnis\n\n\n\n\nc(a, b, ...)\nc(1, 5, 9)\n1, 5, 9\n\n\na:b\n1:5\n1, 2, 3, 4, 5\n\n\nseq(from, to, by, length.out)\nseq(from = 0, to = 6, by = 2)\n0, 2, 4, 6\n\n\nrep(x, times, each, length.out)\nrep(c(7, 8), times = 2, each = 2)\n7, 7, 8, 8, 7, 7, 8, 8"
+  },
+  {
+    "objectID": "03_r_objekte.html#erstellen-wir-ein-paar-vektoren",
+    "href": "03_r_objekte.html#erstellen-wir-ein-paar-vektoren",
+    "title": "03 Objekte",
+    "section": "Erstellen wir ein paar Vektoren",
+    "text": "Erstellen wir ein paar Vektoren\nOh, ich platze gleich vor Vorfreude.\n\n\n# Create numeric vectors\na &lt;- c(1, 2, 3, 4, 5)\n# Show result\na\n\ne &lt;- 1:5\ne\n\nf &lt;- 5:1\nf\n\ng &lt;- 1.4:4.4\ng\n\n\n[1] 1 2 3 4 5\n[1] 1 2 3 4 5\n[1] 5 4 3 2 1\n[1] 1.4 2.4 3.4 4.4"
+  },
+  {
+    "objectID": "03_r_objekte.html#mit-welchem-vektortyp-habe-ich-es-zu-tun",
+    "href": "03_r_objekte.html#mit-welchem-vektortyp-habe-ich-es-zu-tun",
+    "title": "03 Objekte",
+    "section": "Mit welchem Vektortyp habe ich es zu tun?",
+    "text": "Mit welchem Vektortyp habe ich es zu tun?\nHierfür nutzen wir die typof()-Funktion\n\n\na &lt;- c(1, 2, 3, 4, 5)\ntypeof(a)\n\n\n[1] \"double\""
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-war-das-mit-der-zangstransformation",
+    "href": "03_r_objekte.html#wie-war-das-mit-der-zangstransformation",
+    "title": "03 Objekte",
+    "section": "Wie war das mit der “Zangstransformation”",
+    "text": "Wie war das mit der “Zangstransformation”\nWelcher Ganove hat meine Zahlen durcheinander gebracht?\n\n\nxy &lt;- c(1, 2, 3, \"4\")\n\ntypeof(xy)\n\n\n[1] \"character\""
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-viele-elemente-sind-in-meinem-vektor",
+    "href": "03_r_objekte.html#wie-viele-elemente-sind-in-meinem-vektor",
+    "title": "03 Objekte",
+    "section": "Wie viele Elemente sind in meinem Vektor?",
+    "text": "Wie viele Elemente sind in meinem Vektor?\nHierfür nutzen wir die length()-Funktion\n\n\nw &lt;- seq(from = 1,\n         to = 83,\n         by = 7)\n\nw\n\n# How many objects contains vector \"w\"?\nlength(w)\n\n\n [1]  1  8 15 22 29 36 43 50 57 64 71 78\n[1] 12"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-müssen-wir-möglichst-wenig-tippen",
+    "href": "03_r_objekte.html#wie-müssen-wir-möglichst-wenig-tippen",
+    "title": "03 Objekte",
+    "section": "Wie müssen wir möglichst wenig tippen?",
+    "text": "Wie müssen wir möglichst wenig tippen?\nEndlich etwas Vernünftiges!\n\n\nc(\n    \"a\", \"b\", \"a\", \"b\", \n    \"a\", \"b\", \"a\", \"b\",\n    \"a\", \"b\", \"a\", \"b\",\n    \"a\", \"b\", \"a\", \"b\",\n    \"a\", \"b\",\"a\",  \"b\"\n)\n\n\n [1] \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\"\n[20] \"b\"\n\n\n\n\nz &lt;- rep(c(\"a\", \"b\"),\n         times = 10)\nz\n\nz_01 &lt;- rep(1:3,\n            length.out = 8)\nz_01\n\n\n [1] \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\" \"b\" \"a\"\n[20] \"b\"\n[1] 1 2 3 1 2 3 1 2"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-verbinden-wir-vektoren",
+    "href": "03_r_objekte.html#wie-verbinden-wir-vektoren",
+    "title": "03 Objekte",
+    "section": "Wie verbinden wir Vektoren?",
+    "text": "Wie verbinden wir Vektoren?\nHierfür nutzen wir ganz einfach die c()-Funktion, die wir schon kennen\n\n\na &lt;- c(1, 2, 3, 4, 5)\nb &lt;- c(5, 6, 7)\n\n# Combine vectors\nd &lt;- c(a, b)\nd\n\n\n[1] 1 2 3 4 5 5 6 7"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-finde-ich-heraus-ob-werte-fehlen",
+    "href": "03_r_objekte.html#wie-finde-ich-heraus-ob-werte-fehlen",
+    "title": "03 Objekte",
+    "section": "Wie finde ich heraus ob Werte fehlen?",
+    "text": "Wie finde ich heraus ob Werte fehlen?\nWelcher Ganove hat Elemente entwendet?\n\n\na &lt;- c(1:4, NA, 4:1, NA)\na\n\n# Check whether a vector includes NAs\nis.na(a)\n\n# Check position of NAs\nwhich(is.na(a))\n\n\n [1]  1  2  3  4 NA  4  3  2  1 NA\n [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE\n[1]  5 10\n\n\nFehlende Werte werden in R als NA bezeichnet"
+  },
+  {
+    "objectID": "03_r_objekte.html#übung-teil-1",
+    "href": "03_r_objekte.html#übung-teil-1",
+    "title": "03 Objekte",
+    "section": "Übung – Teil 1",
+    "text": "Übung – Teil 1\n\nErstellen Sie einen Vektor namens „dreisprung”.\nDer Vektor soll die Zahlen von 1 bis 31 (in 3er-Schritten) enthalten.\n\nErstellen Sie einen Vektor namens „einssieben”.\nDer Vektor soll Werte 1 bis 7 haben.\nJeder Wert soll 3-mal hintereinander angezeigt werden.\nDer Vektor soll exakt 20 Elemente enthalten.\nGenerieren Sie einen Vektor namens „verbund” aus den Vektoren „dreisprung” und „einssieben”."
+  },
+  {
+    "objectID": "03_r_objekte.html#übung-teil-2",
+    "href": "03_r_objekte.html#übung-teil-2",
+    "title": "03 Objekte",
+    "section": "Übung – Teil 2",
+    "text": "Übung – Teil 2\n\nErstellen Sie einen Vektor namens „meine_info”.\nDer Vektor soll Ihren Vor- und Nachnamen sowie Ihr Geburtsjahr enthalten.\nWie viele Elemente beinhaltet der Vektor „meine_info”?\nBestimmen Sie den Vektortyp von „meine_info”.\nAddieren Sie 1 zu „meine_info”.\nWelches Ergebnis erhalten Sie? Diskutieren Sie dieses."
+  },
+  {
+    "objectID": "03_r_objekte.html#übung-teil-3",
+    "href": "03_r_objekte.html#übung-teil-3",
+    "title": "03 Objekte",
+    "section": "Übung – Teil 3",
+    "text": "Übung – Teil 3\n\n\nBerechnen bzw. erstellen Sie\n\nRange\nInterquartilsabstand\nVarianz\nStandardabweichung\neinen Boxplot\n\n\n\n\n\nAnzahl von „Das ist wichtig …” pro Vorlesung\n19, 23, 21, 18, 20, 19, 21, 22, 22, 19, 20, 20, 20, 19, 20, 20, 23, 21, 19, 18"
+  },
+  {
+    "objectID": "03_r_objekte.html#matrices-und-dataframes",
+    "href": "03_r_objekte.html#matrices-und-dataframes",
+    "title": "03 Objekte",
+    "section": "Matrices und Dataframes",
+    "text": "Matrices und Dataframes\n\nbeide stellen Daten zweidimensional dar (vgl. Excel)\nMatrizen können nur einen Typ von Daten enthalten\nDataframes können mehrere Typen gleichzeitig enthalten\nWarum überhaupt Matrizen nutzen?\n\nHoly Matrices"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-verbinde-ich-vektoren-zu-einer-matrix",
+    "href": "03_r_objekte.html#wie-verbinde-ich-vektoren-zu-einer-matrix",
+    "title": "03 Objekte",
+    "section": "Wie verbinde ich Vektoren zu einer Matrix?",
+    "text": "Wie verbinde ich Vektoren zu einer Matrix?\n\n\n\n\n\n\n\n\nFunktion\nBeschreibung\nBeispiel\n\n\n\n\ncbind(a, b, c)\nÜberträgt Vektoren als Spalten in eine Matrix\ncbind(1:5, 6:10, 11:15)\n\n\nrbind(a, b, c)\nÜberträgt Vektoren als Zeilen in eine Matrix\nrbind(1:5, 6:10, 11:15)"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-erstelle-ich-matrices-und-dataframes",
+    "href": "03_r_objekte.html#wie-erstelle-ich-matrices-und-dataframes",
+    "title": "03 Objekte",
+    "section": "Wie erstelle ich Matrices und Dataframes",
+    "text": "Wie erstelle ich Matrices und Dataframes\n\n\n\n\n\n\n\n\nFunktion\nBeschreibung\nBeispiel\n\n\n\n\nmatrix(x, nrow,ncol, byrow)\nErstellt eine Matrix basierend auf Vektor x\nmatrix(x = 1:12, nrow = 3, ncol = 4)\n\n\ndata.frame()\nErstellt einen Dataframe. Die Spaltennamen werden definiert.\ndata.frame(\"age\" = c(20, 24), \"sex\" = c(\"m\", \"w\"), \"pkt\" = c(55, 60))"
+  },
+  {
+    "objectID": "03_r_objekte.html#hier-zwei-beispiele-zur-vektorverbindung",
+    "href": "03_r_objekte.html#hier-zwei-beispiele-zur-vektorverbindung",
+    "title": "03 Objekte",
+    "section": "Hier zwei Beispiele zur Vektorverbindung",
+    "text": "Hier zwei Beispiele zur Vektorverbindung\nfür “spaltenweise”\n\n\n# Create matrix by columns\na &lt;- 1:5\nb &lt;- 6:10\nc &lt;- 11:15\n\ncbind(a, b, c)\n\n\n     a  b  c\n[1,] 1  6 11\n[2,] 2  7 12\n[3,] 3  8 13\n[4,] 4  9 14\n[5,] 5 10 15\n\n\nund hier für “zeilenweise”\n\n\n# Create matrix by rows\na &lt;- 1:5\nb &lt;- 6:10\nc &lt;- 11:15\n\nrbind(a, b, c)\n\n\n  [,1] [,2] [,3] [,4] [,5]\na    1    2    3    4    5\nb    6    7    8    9   10\nc   11   12   13   14   15"
+  },
+  {
+    "objectID": "03_r_objekte.html#erstellen-einer-matrix",
+    "href": "03_r_objekte.html#erstellen-einer-matrix",
+    "title": "03 Objekte",
+    "section": "Erstellen einer Matrix",
+    "text": "Erstellen einer Matrix\nHierfür nutzen wir die matrix-Funktion\n\n\n# Create a matrix of the integers 1:10,\n# with 5 rows and 2 columns\nmatrix(data = 1:10,\n       nrow = 5,\n       ncol = 2)\n\n# Now with 2 rows and 5 columns\nmatrix(data = 1:10,\n       nrow = 2,\n       ncol = 5)\n\n\n     [,1] [,2]\n[1,]    1    6\n[2,]    2    7\n[3,]    3    8\n[4,]    4    9\n[5,]    5   10\n     [,1] [,2] [,3] [,4] [,5]\n[1,]    1    3    5    7    9\n[2,]    2    4    6    8   10"
+  },
+  {
+    "objectID": "03_r_objekte.html#erstellen-eines-data-frames",
+    "href": "03_r_objekte.html#erstellen-eines-data-frames",
+    "title": "03 Objekte",
+    "section": "Erstellen eines data frames",
+    "text": "Erstellen eines data frames\nHierfür nutzen wir die data.frame-Funktion\n\n\n# Create a dataframe\ndata.frame(id = 1:3,\n           gen = c(\"w\", \"m\", \"d\"),\n           p_t01 = c(50, 59, 51),\n           p_t02 = c(53, NA, 54))\n\n\n  id gen p_t01 p_t02\n1  1   w    50    53\n2  2   m    59    NA\n3  3   d    51    54"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-finde-ich-mich-zurecht",
+    "href": "03_r_objekte.html#wie-finde-ich-mich-zurecht",
+    "title": "03 Objekte",
+    "section": "Wie finde ich mich zurecht?",
+    "text": "Wie finde ich mich zurecht?\n\n\n\nFunktion\nBeschreibung\nBeispiel\n\n\n\n\nnames()\nZeigt uns die Spaltennamen\nnames(mtcars)\n\n\nView()\nZeigt mir den Datensatz\nView(mtcars)\n\n\nstr()\nZeigt mir die Struktur eines Datensatzes\nstr(mtcars)\n\n\n$\nWält eine Spalte aus\nmtcars$mpg\n\n\nnrow()\nAnzahl der Zeilen eines Datensatzes\nnrow(mtcars)\n\n\nncol()\nAnzahl der Spalten eines Datensatzes\nncol(mtcars)"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-bekomme-ich-eine-zusammenfassung",
+    "href": "03_r_objekte.html#wie-bekomme-ich-eine-zusammenfassung",
+    "title": "03 Objekte",
+    "section": "Wie bekomme ich eine Zusammenfassung?",
+    "text": "Wie bekomme ich eine Zusammenfassung?\n\n\n\n\n\n\n\n\nFunktion\nBeschreibung\nBeispiel\n\n\n\n\nhead()\nZeigt mir die ersten Zeilen\nhead(mtcars)\n\n\ntail()\nZeigt mir die letzten Zeilen\ntail(mtcars)\n\n\ntable()\nTabellarische Zusammenfassung einer Spalte\ntable(mtcars$am)\n\n\nsummary()\nZeigt mir eine Zusammenfassung eines Datensatzes; funktioniert auch für einzelne Spalten\nsummary(mtcars), summary(mtcars$mpg)"
+  },
+  {
+    "objectID": "03_r_objekte.html#dataframes-übung",
+    "href": "03_r_objekte.html#dataframes-übung",
+    "title": "03 Objekte",
+    "section": "Dataframes – Übung",
+    "text": "Dataframes – Übung\n\nWie heißen die Spalten des Datensatzes „ToothGrowth”?\nSehen Sie sich die ersten Zeilen von „ToothGrowth” an.\nLassen Sie sich eine Zusammenfassung der Spalte „len” aus dem Datensatz „ToothGrowth” anzeigen. Welche Werte sehen Sie und was können diese bedeuten?"
+  },
+  {
+    "objectID": "03_r_objekte.html#was-kann-ich-mit-objekten-machen-1",
+    "href": "03_r_objekte.html#was-kann-ich-mit-objekten-machen-1",
+    "title": "03 Objekte",
+    "section": "Was kann ich mit Objekten machen?",
+    "text": "Was kann ich mit Objekten machen?\n\nEinzelne Werte (Elemente) auswählen Wow!\nBerechnungen anstellen Wer hätte das wohl gedacht!?\n… und noch vieles mehr"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-wähle-ich-ein-element-aus",
+    "href": "03_r_objekte.html#wie-wähle-ich-ein-element-aus",
+    "title": "03 Objekte",
+    "section": "Wie wähle ich ein Element aus?",
+    "text": "Wie wähle ich ein Element aus?\nWie finde ich den Ganoven?\n\nEinzelne Elemente innerhalb eines Vektors werden mit [ ] indiziert\nz.B. möchte ich das 66. Element eines Vekotrs wissen\nTeildatensätze erstellen\n\n\n\n# Ermöglicht eine Reproduktion\nset.seed(123)   \n# Erstellen eines Vectors\nvec_ft &lt;- sample(\n    x = 1:1000,\n    size = 100,\n    replace = FALSE\n)\n# Wert des 66. Elements\nvec_ft[66]\n\n\n[1] 277"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-wähle-ich-mehrere-elemente-aus",
+    "href": "03_r_objekte.html#wie-wähle-ich-mehrere-elemente-aus",
+    "title": "03 Objekte",
+    "section": "Wie wähle ich mehrere Elemente aus?",
+    "text": "Wie wähle ich mehrere Elemente aus?\n\nEs können auch mehrere Elemente mittels [ ] indiziert werden\nz.B. möchte ich das 11. und 22. Objekt eines Vektors\n\n\n\nvec_ft[c(11, 22)]\n\n\n[1] 244 649"
+  },
+  {
+    "objectID": "03_r_objekte.html#muss-ich-immer-alles-tippen",
+    "href": "03_r_objekte.html#muss-ich-immer-alles-tippen",
+    "title": "03 Objekte",
+    "section": "Muss ich immer alles Tippen?",
+    "text": "Muss ich immer alles Tippen?\n\nEs können auch mehrere Elemente mittels [ ] indiziert werden\nEs können auch Objekte zum Indizieren genutzt werden\n\n\n\n# Werte des 11., 22., 33. und 44. Elemets\n\n# Erstellen eines \"Auswahlobjektes\"\nel_to_ff &lt;- c(11, 22, 33, 44)   \n\nvec_ft[el_to_ff]\nvec_ft[c(11, 22, 33, 44)]\n\n\n[1] 244 649 593 937\n[1] 244 649 593 937"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-wähle-ich-aus-zweidimensionalen-daten-aus",
+    "href": "03_r_objekte.html#wie-wähle-ich-aus-zweidimensionalen-daten-aus",
+    "title": "03 Objekte",
+    "section": "Wie wähle ich aus zweidimensionalen Daten aus?",
+    "text": "Wie wähle ich aus zweidimensionalen Daten aus?\nDas wollte ich immer schon wissen!"
+  },
+  {
+    "objectID": "03_r_objekte.html#lass-uns-einen-datensatz-erstellen",
+    "href": "03_r_objekte.html#lass-uns-einen-datensatz-erstellen",
+    "title": "03 Objekte",
+    "section": "Lass uns einen Datensatz erstellen",
+    "text": "Lass uns einen Datensatz erstellen\n\n\nset.seed(123)\ndf_ft &lt;- data.frame(\n    id = 1:100,\n    gen = sample(\n        x = c(\"fem\", \"mal\"),\n        size = 100,\n        replace = TRUE),\n    age = sample(x = 19:31,\n                size = 100,\n                replace = TRUE),\n    eg_cg = sample(\n        x = c(\"eg\", \"cg\"),\n        size = 100,\n        replace = TRUE),\n    p_t01 = sample(\n        x = 1:100,\n        size = 100,\n        replace = TRUE),\n    p_t02 = sample(\n        x = 1:100,\n        size = 100,\n        replace = TRUE)\n)"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-wähle-ich-nun-aus-datensätzen-aus",
+    "href": "03_r_objekte.html#wie-wähle-ich-nun-aus-datensätzen-aus",
+    "title": "03 Objekte",
+    "section": "Wie wähle ich nun aus Datensätzen aus?",
+    "text": "Wie wähle ich nun aus Datensätzen aus?\n\nDie Indizierung funktioniert wieder mittels [ ]\nda data frames zweidimensional sind, müssen wir Zeilen und Spalten indizieren, daher [zeile, spalte]\n\n\n\n\n\n\n\n\nMerke\n\n\nZeilen zuerst!"
+  },
+  {
+    "objectID": "03_r_objekte.html#wie-sieht-der-spass-aus",
+    "href": "03_r_objekte.html#wie-sieht-der-spass-aus",
+    "title": "03 Objekte",
+    "section": "Wie sieht der Spass aus?",
+    "text": "Wie sieht der Spass aus?\n\n\n# Wähle den Wert in der 2. Zeile \n# und 4. Spalte aus\ndf_ft[2, 4]\n\n# Wähle die Zeilen 80 bis 90 \n# und die Spalte \"age\" aus\ndf_ft[80:90, \"age\"]\n\n# Wähle Zeilen mithilfe eines \n# Objekts (el_to_ff) und die letzte Spalte aus\ndf_ft[el_to_ff, ncol(df_ft)]\n\n# Wähle alle Teilnehmenden aus, \n# die in el_to_ff enthalten sind\ndf_ft[el_to_ff, ]"
+  },
+  {
+    "objectID": "03_r_objekte.html#berechnen",
+    "href": "03_r_objekte.html#berechnen",
+    "title": "03 Objekte",
+    "section": "Berechnen",
+    "text": "Berechnen\nR ist vektorbasiert\nWas bedeuted das für uns?\nWir sparen uns viel Arbeit!"
+  },
+  {
+    "objectID": "03_r_objekte.html#erstellen-wir-vektoren",
+    "href": "03_r_objekte.html#erstellen-wir-vektoren",
+    "title": "03 Objekte",
+    "section": "Erstellen wir Vektoren",
+    "text": "Erstellen wir Vektoren\nNa endlich!\n\n\nset.seed(123)\na &lt;- sample(1:50, 20, T)\n\nset.seed(321)\nb &lt;- sample(1:50, 20, T)"
+  },
+  {
+    "objectID": "03_r_objekte.html#was-kann-ich-nun-schönes-berechnen",
+    "href": "03_r_objekte.html#was-kann-ich-nun-schönes-berechnen",
+    "title": "03 Objekte",
+    "section": "Was kann ich nun schönes berechnen?",
+    "text": "Was kann ich nun schönes berechnen?\nDas werden wir gleich sehen!\n\n\na + 1000\n\n\n [1] 1031 1015 1014 1003 1042 1050 1043 1037 1014 1025 1026 1027 1005 1027 1028\n[16] 1009 1029 1035 1008 1026\n\n\n\n\na - b\n\n\n [1] -19   2 -10 -13  10  33   7 -10   3   0  -5   9 -26  12 -13 -25  18   4 -10\n[20] -10\n\n\n\n\n# Addiere 100 zu den Elementen von a, \n# die größer als 30 sind\na[a &gt; 30] &lt;- a[a &gt; 30] + 100\na\n\n\n [1] 131  15  14   3 142 150 143 137  14  25  26  27   5  27  28   9  29 135   8\n[20]  26"
+  },
+  {
+    "objectID": "03_r_objekte.html#rechnen-mit-datasätzen",
+    "href": "03_r_objekte.html#rechnen-mit-datasätzen",
+    "title": "03 Objekte",
+    "section": "Rechnen mit Datasätzen",
+    "text": "Rechnen mit Datasätzen\nLass uns noch schnell ein paar “Fehler” einbauen.\n\n\n# Stelle sicher, dass wir unsere \n# Ergebnisse reproduzieren können\nset.seed(1)\n# Wähle 5 Zahlen (Zeilen) aus\np_t01_na &lt;- sample(1:100, 5, F)\n\nset.seed(2)\np_t02_na &lt;- sample(1:100, 5, F)\n\n# Füge fehlende Werte hinzu\ndf_ft[p_t01_na, \"p_t01\"] &lt;- NA\ndf_ft[p_t02_na, \"p_t02\"] &lt;- NA"
+  },
+  {
+    "objectID": "03_r_objekte.html#lass-uns-den-unterschied-berechnen",
+    "href": "03_r_objekte.html#lass-uns-den-unterschied-berechnen",
+    "title": "03 Objekte",
+    "section": "Lass uns den Unterschied berechnen",
+    "text": "Lass uns den Unterschied berechnen\n\n\n# Berechne die Veränderung zwischen \n# p_t02 und p_t01\nhead(df_ft$p_t02 - df_ft$p_t01)\n\n# Füge dem Data Frame eine neue \n# Spalte \"change\" hinzu\ndf_ft$change &lt;- df_ft$p_t02 - df_ft$p_t01\n\n\n[1]  NA  59  86 -14 -81  NA"
+  },
+  {
+    "objectID": "03_r_objekte.html#übung-i",
+    "href": "03_r_objekte.html#übung-i",
+    "title": "03 Objekte",
+    "section": "Übung I",
+    "text": "Übung I\n\nErstellen Sie einen Datensatz namens „df_st”. Der Datensatz soll simulierte Daten von 100 Studierenden enthalten, die zu Beginn bzw. zu Ende des ersten Semesters nach ihren R-Kenntnissen befragt werden. Die R-Kenntnisse werden mittels der R-Scale erfasst, die Werte von 0 (keine Kenntnisse) bis 5 (sehr gute Kenntnisse) hat. Nutzen Sie hierfür die sample()-Funktion. Die Spalten im „df_st” sollen die folgenden Namen haben: id, r_t1 und r_t2. Nutzen Sie die set.seed()-Funktion, um sicherzustellen, dass die gleichen zufälligen Zahlen ausgewählt werden. Nutzen Sie den seed 1."
+  },
+  {
+    "objectID": "03_r_objekte.html#übung-ii",
+    "href": "03_r_objekte.html#übung-ii",
+    "title": "03 Objekte",
+    "section": "Übung II",
+    "text": "Übung II\n\nBerechnen Sie, ob sich die R-Kenntnisse über das Semester verbessert haben. Wenn sich die Kenntnisse verbessert haben, dann ist die Differenz zwischen r_t2 und r_t1 positiv. Fügen Sie das Ergebnis als neue Spalte „diff” zum data frame hinzu.\nSehen Sie sich die ersten sechs Zeilen des data frames an.\nBerechnen Sie die absolute Häufigkeit von Studierenden, bei denen sich die Kenntnisse verbessert haben. Nutzen Sie hierfür die sum()-Funktion.\nWelche R-Kenntnisse zu Beginn und welche Differenzwerte haben die Personen 4 und 73?"
+  },
+  {
+    "objectID": "02_r_language.html#r-als-programmiersprache",
+    "href": "02_r_language.html#r-als-programmiersprache",
+    "title": "02 R als Programmiersprache",
+    "section": "R als Programmiersprache",
+    "text": "R als Programmiersprache\n\nR als Taschenrechner\nLogische Abfragen\nFunktionen\nÜbung"
+  },
+  {
+    "objectID": "02_r_language.html#r-als-taschenrechner-1",
+    "href": "02_r_language.html#r-als-taschenrechner-1",
+    "title": "02 R als Programmiersprache",
+    "section": "R als Taschenrechner",
+    "text": "R als Taschenrechner\n\nöffnen Sie ein neues R-Script\nspeichern es unter Anwendung der „Good Practice” Empfehlungen"
+  },
+  {
+    "objectID": "02_r_language.html#r-als-taschenrechner-2",
+    "href": "02_r_language.html#r-als-taschenrechner-2",
+    "title": "02 R als Programmiersprache",
+    "section": "R als Taschenrechner",
+    "text": "R als Taschenrechner\nR\n\nersetzt nicht nur andere Statistik-Programme\nsondern auch Ihren Taschenrechner BAM! \n\n\nABER, R kann nicht Ihr Urteilsvermögen ersetzen! OUCH!"
+  },
+  {
+    "objectID": "02_r_language.html#r-als-taschenrechner-3",
+    "href": "02_r_language.html#r-als-taschenrechner-3",
+    "title": "02 R als Programmiersprache",
+    "section": "R als Taschenrechner",
+    "text": "R als Taschenrechner\n\n\n\nOperator\nBedeutung\nOperator\nBedeutung\n\n\n\n\n+\nAddition\nsqrt( )\nQuadratwurzel\n\n\n-\nSubtraktion\nexp( )\nExponentialfunktion \\(e^x\\)\n\n\n*\nMultiplikation\nlog( )\nnatürlicher Logarithmus\n\n\n/\nDivision\nsum( )\nSumme\n\n\n^\nPotenz\nabs( )\nBetrag (absoluter Wert)"
+  },
+  {
+    "objectID": "02_r_language.html#r-als-taschenrechner-4",
+    "href": "02_r_language.html#r-als-taschenrechner-4",
+    "title": "02 R als Programmiersprache",
+    "section": "R als Taschenrechner",
+    "text": "R als Taschenrechner\nMachen wir die ersten Schritte\n\n\n1 + 3 + 9\n1 - 5 * 3\n(1 - 5) * 3\nsqrt(9245)\nlog(9245)\n\n\n[1] 13\n[1] -14\n[1] -12\n[1] 96.15092\n[1] 9.131838"
+  },
+  {
+    "objectID": "02_r_language.html#r-als-taschenrechner-5",
+    "href": "02_r_language.html#r-als-taschenrechner-5",
+    "title": "02 R als Programmiersprache",
+    "section": "R als Taschenrechner",
+    "text": "R als Taschenrechner\nR befolgt automatisch Rechenregeln → darum Klammersetzung beachten!\n\n\n1 - 5 * 3 # Punkt vor Strich\n(1 - 5) * 3 # Klammer zuerst\n\n\n[1] -14\n[1] -12"
+  },
+  {
+    "objectID": "02_r_language.html#logische-abfragen-1",
+    "href": "02_r_language.html#logische-abfragen-1",
+    "title": "02 R als Programmiersprache",
+    "section": "Logische Abfragen",
+    "text": "Logische Abfragen\nWarum brauchen wir logische Abfragen?\n\n\nObjekte zu vergleichen\nObjekte zu verändern\nin Funktionen\n…"
+  },
+  {
+    "objectID": "02_r_language.html#logische-abfragen-2",
+    "href": "02_r_language.html#logische-abfragen-2",
+    "title": "02 R als Programmiersprache",
+    "section": "Logische Abfragen",
+    "text": "Logische Abfragen\n\n\n\nOperator\nBedeutung\nOperator\nBedeutung\n\n\n\n\n==\ngleich\n!=\nungleich\n\n\n&gt;\ngrößer\n&lt;\nkleiner\n\n\n&gt;=\ngrößer gleich\n&lt;=\nkleiner gleich\n\n\n|\noder\n&\nund\n\n\n%in%\nbefindet sich x in y\n\n\n\n\n\n… prüfen, ob bestimmte logische Aussagen zutreffen"
+  },
+  {
+    "objectID": "02_r_language.html#logische-abfragen-3",
+    "href": "02_r_language.html#logische-abfragen-3",
+    "title": "02 R als Programmiersprache",
+    "section": "Logische Abfragen",
+    "text": "Logische Abfragen\n\n\n3 &gt; -1\n3 &gt;= 3\n3 != 3\n3 &lt; 2 | 2 &lt; 3\n\"R-Studio\" == \"hervorragend\"\n\"a\" %in% \"hervorragend\"\n\"a\" %in% c(\"a\", \"b\", \"c\")\n\n\n[1] TRUE\n[1] TRUE\n[1] FALSE\n[1] TRUE\n[1] FALSE\n[1] FALSE\n[1] TRUE\n\n\nAntwort ist binär → “richtig” = TRUE oder “falsch” = FALSE\nIm Hindergrund wird TRUE eine 1 und FALSE eine 0 zugeordnet!"
+  },
+  {
+    "objectID": "02_r_language.html#funktionen-1",
+    "href": "02_r_language.html#funktionen-1",
+    "title": "02 R als Programmiersprache",
+    "section": "Funktionen",
+    "text": "Funktionen\nWarum brauchen wir Funktionen?\n\nerleichtern uns unser Leben in R\nfür unterschiedlichste Anwendungen nutzbar\nFunktionen in Base-R als auch in Packages"
+  },
+  {
+    "objectID": "02_r_language.html#funktionen-2",
+    "href": "02_r_language.html#funktionen-2",
+    "title": "02 R als Programmiersprache",
+    "section": "Funktionen",
+    "text": "Funktionen\nWie sind Funktionen aufgebaut?\n\nFunktionen beginnen immer mit einem Namen\ngefolgt von Klammern\ninnerhalb der Klammern stehen Argumente\n\nBeispiel: sum(x, na.rm = TRUE)\n\n\nin den Argumenten stehen Defaults\nwir nutzen die Argumente zum Steuern der Funktion"
+  },
+  {
+    "objectID": "02_r_language.html#funktionen-3",
+    "href": "02_r_language.html#funktionen-3",
+    "title": "02 R als Programmiersprache",
+    "section": "Funktionen",
+    "text": "Funktionen\nHilfe!\n\nFunktionsnamen tippen → RStudio zeigt Vorschläge und eine Kurzbeschreibung\nF1 drücken für ausführliche Hilfe\n\nBeispiel: sum(x, na.rm = TRUE)\n\n\n?sum()"
+  },
+  {
+    "objectID": "02_r_language.html#funktionen-4",
+    "href": "02_r_language.html#funktionen-4",
+    "title": "02 R als Programmiersprache",
+    "section": "Funktionen",
+    "text": "Funktionen\nHier ein paar Beispiele\n\nc( ) für combine (korrekt: concatenate)\nmean( ) für den Mittelwert\nround( ) für das Runden von Werten"
+  },
+  {
+    "objectID": "02_r_language.html#funktionen-5",
+    "href": "02_r_language.html#funktionen-5",
+    "title": "02 R als Programmiersprache",
+    "section": "Funktionen",
+    "text": "Funktionen\nc( )\n\n\nc(1, 4, 5, 2, 2, 534)\n\n\n[1]   1   4   5   2   2 534\n\n\nR „weiß”, dass die Werte in der eingegebenen Reihenfolge zusammengehören"
+  },
+  {
+    "objectID": "02_r_language.html#funktionen-6",
+    "href": "02_r_language.html#funktionen-6",
+    "title": "02 R als Programmiersprache",
+    "section": "Funktionen",
+    "text": "Funktionen\nmean( )\n\n\nc(1, 4, 5, 2, 2, 534)\nmean(c(1, 4, 5, 2, 2, 534))\n\n\n[1]   1   4   5   2   2 534\n[1] 91.33333\n\n\n\n\nFunktionen können geschachtelt werden\nzunächst wird die „innerste” ausgeführt\ndanach die „nächst äußere”"
+  },
+  {
+    "objectID": "02_r_language.html#funktionen-7",
+    "href": "02_r_language.html#funktionen-7",
+    "title": "02 R als Programmiersprache",
+    "section": "Funktionen",
+    "text": "Funktionen\nround( )\n\n\nc(1, 4, 5, 2, 2, 534)\nmean(c(1, 4, 5, 2, 2, 534))\nround(mean(c(1, 4, 5, 2, 2, 534)))\n\n\n[1]   1   4   5   2   2 534\n[1] 91.33333\n[1] 91\n\n\nSchachteln von Funktionen kann schnell unübersichtlich werden!"
+  },
+  {
+    "objectID": "02_r_language.html#funktionen-8",
+    "href": "02_r_language.html#funktionen-8",
+    "title": "02 R als Programmiersprache",
+    "section": "Funktionen",
+    "text": "Funktionen\nGeht das auch übersichtlicher?\nJa, mit der Pipe |&gt;\nShortcut: cmd/strg + shift + m\n\n\nc(1, 4, 5, 2, 2, 534) |&gt; \n    mean() |&gt; \n    round()"
+  },
+  {
+    "objectID": "02_r_language.html#teil-1",
+    "href": "02_r_language.html#teil-1",
+    "title": "02 R als Programmiersprache",
+    "section": "Teil 1",
+    "text": "Teil 1\n\ninstallieren Sie das „psych” – Package\nBerechnen Sie:\n\n\\((44 + 6 - 34) \\cdot 12\\)\n\\(7 + 12 / 3\\)\n\\(\\log(1.2)\\)\nrunden Sie das Ergebnis von c) auf zwei Nachkommastellen\n\\(e^{7+4}\\)"
+  },
+  {
+    "objectID": "02_r_language.html#teil-2",
+    "href": "02_r_language.html#teil-2",
+    "title": "02 R als Programmiersprache",
+    "section": "Teil 2",
+    "text": "Teil 2\n\nWie lauten die Ergebnisse für die folgenden logischen Abfragen\n\n\\(9 = 12\\)\n\\(9 \\neq 12\\)\n\\(78 \\cdot 5 &lt; 8984\\)\n\nWas bedeutet das „trim” Argument der mean( ) Funktion"
+  },
+  {
+    "objectID": "02_r_language.html#teil-3",
+    "href": "02_r_language.html#teil-3",
+    "title": "02 R als Programmiersprache",
+    "section": "Teil 3",
+    "text": "Teil 3\n\n\n\nErstellen Sie folgende Häufigkeitstabellen\n\nabsolute Häufigkeit\nrelative Häufigkeit\nabsolute Summenhäufigkeit\nrelative Summenhäufigkeit\nProzentränge\n\nErstellen Sie ein Histogramm!\n\nBonus Erstellen Sie eine Treppenfunktion\n\n\n\n\nAnzahl von „Das ist wichtig …” pro Vorlesung\n19, 23, 21, 18, 20, 19, 21, 22, 22, 19,\n20, 20, 20, 19, 20, 20, 23, 21, 19, 18"
+  },
+  {
+    "objectID": "02_r_language.html#teil-4",
+    "href": "02_r_language.html#teil-4",
+    "title": "02 R als Programmiersprache",
+    "section": "Teil 4",
+    "text": "Teil 4\n\n\n\nBerechnen Sie\n\nModus\nMedian\narithmetisches Mittel\nQuantile (p25, p75)\n\n\n\n\n\n\nAnzahl von „Das ist wichtig …” pro Vorlesung\n19, 23, 21, 18, 20, 19, 21, 22, 22, 19,\n20, 20, 20, 19, 20, 20, 23, 21, 19, 18"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Folien Statistik",
+    "section": "",
+    "text": "02 R als Programmiersprache\n03 Objekte in R"
+  }
+]
