@@ -18,7 +18,7 @@ $mermaid-edge-color: $edge;
 $mermaid-node-fg-color: $ink;
 $mermaid-fg-color: $edge;
 $mermaid-font-family: "Trebuchet MS", Arial, sans-serif;
-$mermaid-label-bg-color: $paper;
+$mermaid-label-bg-color: $secondary;
 $mermaid-label-fg-color: $ink;
 $mermaid-node-bg-color: $secondary;
 $link-color-hover: $warning;
@@ -330,6 +330,19 @@ div.callout.callout {
   }
 }
 
+// right-aligned bubble: sits at the right edge of the page, tail on the right
+.bat-bubble.align-right {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 8px;      // room for the shadow
+  &::before { left: auto; right: 18%; }
+  &::after  { left: auto; right: calc(18% + 0.2em); }
+  // tail on the left again: {.bat-bubble .align-right .left}
+  &.left::before { left: 18%; right: auto; }
+  &.left::after  { left: calc(18% + 0.2em); right: auto; }
+}
+
 /* ---------- Mermaid diagrams ---------- */
 // Thick comic outlines, hard purple shadows. Colour single nodes in the diagram with classDef.
 .node rect, .node polygon, .node circle, .node ellipse, .node path {
@@ -342,10 +355,19 @@ div.callout.callout {
   stroke-width: 3px !important;
 }
 .marker, marker path { fill: $edge !important; stroke: $edge !important; }
-.nodeLabel, .edgeLabel, .label text, .messageText, text.actor, .actor text, .loopText {
+// Text: black inside nodes and on edge labels (gold caption behind the edge text)
+svg[aria-roledescription] text, svg[aria-roledescription] tspan,
+.nodeLabel, .nodeLabel *, .label, .label *, .edgeLabel, .edgeLabel * {
+  fill: $ink !important;
+  color: $ink !important;
   font-weight: 700;
 }
-.edgeLabel, .edgeLabel rect { background-color: $paper !important; fill: $paper !important; }
+.edgeLabel, .edgeLabel rect, .labelBkg { background-color: $secondary !important; fill: $secondary !important; }
+// Text that sits on the page background (group titles, sequence messages): same as the lines
+.cluster-label, .cluster-label *, .messageText, .loopText, .titleText {
+  fill: $edge !important;
+  color: $edge !important;
+}
 .cluster rect { fill: transparent !important; stroke: $primary !important; stroke-width: 4px !important; }
 rect.actor, .actor { fill: $secondary !important; stroke: $ink !important; stroke-width: 3px !important; }
 .actor-line { stroke: $edge !important; stroke-width: 2px !important; }

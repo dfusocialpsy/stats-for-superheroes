@@ -221,7 +221,7 @@ Schachteln von Funktionen kann schnell unübersichtlich werden!
 
 Ja, mit der *Pipe* ` |> `
 
-Shortcut: cmd/strg + shift + m
+Shortcut: "CMD" / "Strg" + "Shift" + "m"
 
 :::{.fragment}
 ```{r}

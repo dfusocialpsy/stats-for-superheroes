@@ -1,0 +1,646 @@
+/*-- scss:defaults --*/
+$primary:   #8A2BE2;
+$secondary: #FFD700;
+$warning:   #d92323;
+$info:      #4fa9d8;   // tertiary
+$tertiary:  #4fa9d8;
+$ink:       #111111;
+// $paper:     #fff4d6;
+$paper:     #fffbec;
+
+$body-bg: $paper;
+$body-color: $ink;
+$link-color: $primary;
+
+// Mermaid diagrams (Quarto reads these $mermaid-* variables)
+$edge: $ink;
+$mermaid-bg-color: $paper;
+$mermaid-edge-color: $edge;
+$mermaid-node-fg-color: $ink;
+$mermaid-fg-color: $edge;
+$mermaid-font-family: "Trebuchet MS", Arial, sans-serif;
+$mermaid-label-bg-color: $secondary;
+$mermaid-label-fg-color: $ink;
+$mermaid-node-bg-color: $secondary;
+
+// Site / book frame (navbar, sidebar, footer)
+$navbar-bg: $primary;
+$navbar-fg: $secondary;
+$navbar-hl: #ffffff;
+$sidebar-bg: $paper;
+$sidebar-fg: $ink;
+$sidebar-hl: $primary;
+$footer-bg: $ink;
+$footer-fg: $secondary;
+$headings-color: $secondary;
+$font-family-sans-serif: "Trebuchet MS", "Arial Black", Arial, sans-serif;
+$headings-font-family: Impact, "Arial Black", sans-serif;
+$headings-font-weight: 400;
+$font-family-monospace: "Courier New", monospace;
+
+/*-- scss:rules --*/
+body { font-weight: 600; }
+
+h1, h2, h3, .title {
+  background: $primary;
+  border: 4px solid $ink;
+  box-shadow: 6px 6px 0 $warning;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.12em 0.4em;
+  text-shadow: 3px 3px 0 $ink;
+  display: inline-block;
+}
+
+strong { color: $warning; }
+h4, h5, h6 { color: $primary; }   // gold is only for the boxed h1-h3
+a { text-decoration-thickness: 3px; text-decoration-color: $secondary; }
+
+blockquote {
+  background: white;
+  border: 5px solid $ink;
+  border-left: 18px solid $warning;
+  box-shadow: 7px 7px 0 $secondary;
+  padding: 0.7em 1em;
+}
+
+// Code blocks: the frame sits on the outer wrapper (div.sourceCode) so the
+// scrollbar/overflow of <pre> can no longer clip the border or the shadow.
+div.sourceCode, pre:not(.sourceCode) {
+  background-color: $paper !important;   // same as page background
+  border: 5px solid $ink;
+  box-shadow: 7px 7px 0 $secondary;
+  border-radius: 0;
+  margin: 1em 9px 1.2em 0;
+}
+div.sourceCode pre, div.sourceCode pre.sourceCode {
+  border: 0;
+  background: transparent !important;
+  box-shadow: none;
+  margin: 0;
+  border-radius: 0;
+}
+table { border: 4px solid $ink; }
+th { background: $primary; color: $secondary; }
+td, th { border: 2px solid $ink; padding: 0.3em 0.6em; }
+li::marker { color: $warning; }
+
+
+// Display equations are centered by default. Wrap one in  ::: {.eq-left} ... :::  to left-align it.
+.eq-left {
+  mjx-container[display="true"], .MathJax_Display, .katex-display, span.math.display {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+  .katex-display > .katex { text-align: left !important; }
+}
+
+// Purple frame around equations: wrap in  ::: {.eq-frame} ... :::  (combine with .eq-left if you like)
+.eq-frame {
+  box-sizing: border-box;
+  border: 5px solid $primary;
+  padding: 0.3em 0.8em;
+  margin: 1em 0;
+}
+// fit-content frame: ::: {.eq-frame .eq-fit}  (centered); add .eq-left to keep it on the left
+.eq-frame.eq-fit { width: fit-content; max-width: 100%; margin: 1em auto; }
+.eq-frame.eq-fit.eq-left { margin-left: 0; margin-right: auto; }
+
+.comic-panel {
+  background: white; border: 6px solid $ink;
+  box-shadow: 10px 10px 0 $primary; padding: 0.7em; margin: 1em 0;
+}
+.bubble {
+  display: inline-block; background: white; border: 5px solid $ink;
+  border-radius: 45%; padding: 0.6em 1em; box-shadow: 6px 6px 0 $secondary;
+}
+.pow, .bam, .zap, .zok, .ouch {
+  display: inline-block; color: $ink; background: $secondary;
+  border: 5px solid $ink; font-family: Impact, "Arial Black", sans-serif;
+  font-size: 1.5em; padding: 0.1em 0.35em; transform: rotate(var(--angle, -4deg));
+  box-shadow: 6px 6px 0 $warning;
+}
+// all comic tags: white letters with a black outline (background colours stay as defined above)
+.pow, .bam, .zap, .zok, .ouch {
+  color: #fff;
+  -webkit-text-stroke: 5px $ink;
+  paint-order: stroke fill;
+}
+.bam { background: $warning; color: white; transform: rotate(var(--angle, 3deg)); box-shadow: 6px 6px 0 $secondary; }
+.zap { background: $tertiary; transform: rotate(var(--angle, -2deg)); }
+.zok { background: #05ba12; transform: rotate(var(--angle, 2deg)); }
+.ouch {
+  background: #FF4DA6;
+  color: #00B8A9;
+  box-shadow: 6px 6px 0 $primary;
+  transform: rotate(var(--angle, 5deg));
+  -webkit-text-stroke: 5px $ink;   // black outline keeps teal readable on pink
+  paint-order: stroke fill;
+}
+.pow, .bam, .zap, .zok, .ouch { margin: 0.1em 0.4em; }
+
+.c-primary, .c-secondary, .c-warning, .c-tertiary, .c-zok {
+  font-weight: 800;
+  text-shadow: 2px 2px 0 $ink;
+}
+.c-primary   { color: $primary; }
+.c-secondary { color: $secondary; }
+.c-warning   { color: $warning; }
+.c-tertiary  { color: $tertiary; }
+.c-zok       { color: #05ba12; }
+
+
+/* ---------- Bat-Signal callouts (Quarto symbols in a bat-signal oval) ---------- */
+$bat-signal: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40'%3E%3Cellipse cx='32' cy='20' rx='30' ry='18' fill='%23FFD700' stroke='%23111111' stroke-width='3'/%3E%3Cpath d='M32 6 35 12 40 10 46 13 56 12 52 20 54 26 46 22 42 28 38 24 32 34 26 24 22 28 18 22 10 26 12 20 8 12 18 13 24 10 29 12Z' fill='%23111111'/%3E%3C/svg%3E");
+$callout-icons: (
+  note: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40'%3E%3Cellipse cx='32' cy='20' rx='30' ry='18' fill='%23FFD700' stroke='%23111111' stroke-width='3'/%3E%3Ccircle cx='32' cy='20' r='13' fill='%23111111'/%3E%3Ccircle cx='32' cy='13' r='2.4' fill='%23FFD700'/%3E%3Crect x='30' y='17' width='4' height='10' rx='1' fill='%23FFD700'/%3E%3C/svg%3E"),
+  important: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40'%3E%3Cellipse cx='32' cy='20' rx='30' ry='18' fill='%23FFD700' stroke='%23111111' stroke-width='3'/%3E%3Ccircle cx='32' cy='20' r='13' fill='%23111111'/%3E%3Crect x='29.8' y='12' width='4.4' height='9' rx='1.2' fill='%23FFD700'/%3E%3Ccircle cx='32' cy='25.5' r='2.4' fill='%23FFD700'/%3E%3C/svg%3E"),
+  tip: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40'%3E%3Cellipse cx='32' cy='20' rx='30' ry='18' fill='%23FFD700' stroke='%23111111' stroke-width='3'/%3E%3Ccircle cx='32' cy='16' r='8.5' fill='%23111111'/%3E%3Crect x='27' y='21' width='10' height='8' fill='%23111111'/%3E%3Crect x='28' y='30' width='8' height='3.5' rx='1.5' fill='%23111111'/%3E%3Cpath d='M29 17 32 22 35 17' stroke='%23FFD700' stroke-width='1.6' fill='none'/%3E%3C/svg%3E"),
+  warning: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40'%3E%3Cellipse cx='32' cy='20' rx='30' ry='18' fill='%23FFD700' stroke='%23111111' stroke-width='3'/%3E%3Cpolygon points='32,6 47,32 17,32' fill='%23111111' stroke='%23111111' stroke-width='2' stroke-linejoin='round'/%3E%3Crect x='30.2' y='15' width='3.6' height='9' rx='1' fill='%23FFD700'/%3E%3Ccircle cx='32' cy='28' r='1.9' fill='%23FFD700'/%3E%3C/svg%3E"),
+  caution: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40'%3E%3Cellipse cx='32' cy='20' rx='30' ry='18' fill='%23FFD700' stroke='%23FFD700' stroke-width='3'/%3E%3Cpath d='M32 5C34 12 43 15 43 24C43 30 38 34 32 34C26 34 21 30 21 24C21 20 24 18 25 14C27 16 28 18 29 19C30 14 30 10 32 5Z' fill='%23111111'/%3E%3Cpath d='M32 33C28.5 33 26.5 30.5 27 27.5C27.5 25.5 29.5 24.5 30 22C33 24 37 26 36 29.5C35.5 32 34 33 32 33Z' fill='%23FFD700'/%3E%3C/svg%3E")
+);
+$callout-colors: (note: $primary, tip: #be80ff, warning: $warning, important: $secondary, caution: $ink);
+
+div.callout.callout {
+  background: white;
+  border: 4px solid $ink !important;
+  border-left-width: 18px !important;
+  border-radius: 0;
+  box-shadow: 7px 7px 0 $secondary;
+
+  > .callout-header, > .callout-header.callout-titled {
+    font-family: Impact, "Arial Black", sans-serif;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: white;
+  }
+  .callout-title-container { color: inherit; }
+
+  i.callout-icon {
+    width: 2.4em; height: 1.5em;
+    &::before {
+      background-color: transparent !important;
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      -webkit-mask: none !important; mask: none !important;
+      width: 2.4em; height: 1.5em; content: "";
+      display: inline-block;
+    }
+  }
+}
+
+@each $kind, $c in $callout-colors {
+  div.callout-#{$kind}.callout {
+    border-left-color: $c !important;
+    > .callout-header { background: $c !important; border-bottom: 3px solid $ink; }
+    i.callout-icon::before { background-image: map-get($callout-icons, $kind) !important; }
+    @if $kind == tip { > .callout-header { color: $ink !important; } }
+    @if $kind == caution { > .callout-header { color: $secondary !important; } }
+    @if $kind == important {
+      box-shadow: 7px 7px 0 $primary;
+      > .callout-header { color: $ink !important; }
+    }
+  }
+}
+
+// Inline bat emblem: [ ]{.bat-signal}
+.bat-signal {
+  display: inline-block; width: 2.2em; height: 1.4em;
+  background: $bat-signal center / contain no-repeat;
+  vertical-align: middle;
+}
+
+/* ---------- Bat bubble: black signal-shaped speech bubble ---------- */
+// Use: [Holy smokes!]{.bat-bubble}   or   [Holy smokes!]{.bat-bubble .right}
+.bat-bubble {
+  position: relative;
+  display: inline-block;
+  background: $ink;
+  color: $secondary;
+  border: 5px solid $secondary;
+  border-radius: 50%;
+  padding: 0.7em 1.8em;
+  margin-bottom: 1.2em;
+  text-align: center;
+  font-family: Impact, "Arial Black", sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  filter: drop-shadow(6px 6px 0 $primary);
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    left: 18%;
+    width: 0; height: 0;
+    border-style: solid;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+  &::before {                 // gold outline of the tail
+    bottom: -1.15em;
+    border-width: 1.15em 0.7em 0;
+    border-top-color: $secondary;
+  }
+  &::after {                  // black fill of the tail
+    bottom: -0.75em;
+    left: calc(18% + 0.2em);
+    border-width: 0.9em 0.5em 0;
+    border-top-color: $ink;
+  }
+  &.right::before { left: auto; right: 18%; }
+  &.right::after  { left: auto; right: calc(18% + 0.2em); }
+
+  &.inverse {                 // reversed colours: gold bubble, black outline and text
+    background: $secondary;
+    color: $ink;
+    border-color: $ink;
+    &::before { border-top-color: $ink; }
+    &::after  { border-top-color: $secondary; }
+  }
+}
+
+// right-aligned bubble: sits at the right edge of the page, tail on the right
+.bat-bubble.align-right {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 8px;      // room for the shadow
+  &::before { left: auto; right: 18%; }
+  &::after  { left: auto; right: calc(18% + 0.2em); }
+  // tail on the left again: {.bat-bubble .align-right .left}
+  &.left::before { left: 18%; right: auto; }
+  &.left::after  { left: calc(18% + 0.2em); right: auto; }
+}
+
+/* ---------- Clickable headlines (no visible anchor icon) ---------- */
+// Quarto adds a small "#" link next to each heading (anchorjs).
+// Here the link is stretched over the whole heading and made invisible,
+// so the headline itself is the link. Use `anchor-sections: false` instead
+// if you want no link at all.
+h1.anchored, h2.anchored, h3.anchored, h4.anchored, h5.anchored, h6.anchored {
+  position: relative;
+  cursor: pointer;
+}
+.anchored > a.anchorjs-link,
+.anchored > a.anchor-link {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;   // icon stays hidden, also on hover
+  font-size: 0 !important;
+}
+
+// Line numbers colour
+$line-numbers: $primary;
+pre.numberSource code > span > a:first-child::before,
+code.sourceCode > span > a:first-child::before { color: $line-numbers !important; }
+pre.numberSource code { border-left-color: $line-numbers !important; }
+
+// Line numbers for ALL code blocks (CSS counters, no per-chunk option needed).
+// Blocks that already use .numberLines keep pandoc's own numbers.
+div.sourceCode pre:not(.numberSource) code.sourceCode { counter-reset: batln; }
+div.sourceCode pre:not(.numberSource) code.sourceCode > span { counter-increment: batln; }
+div.sourceCode pre:not(.numberSource) code.sourceCode > span::before {
+  content: counter(batln);
+  display: inline-block;
+  width: 2em;
+  margin-right: 0.9em;
+  text-align: right;
+  color: $line-numbers;
+  user-select: none;
+}
+
+// Fix clipped code: remove the hanging indent that code-overflow: wrap adds
+// (it pushed wrapped lines out of the frame on the left).
+div.sourceCode pre code.sourceCode > span {
+  display: inline !important;
+  text-indent: 0 !important;
+  padding-left: 0 !important;
+}
+div.sourceCode pre code.sourceCode { white-space: pre-wrap; overflow: visible; }
+
+
+/* ---------- Websites and books ---------- */
+.navbar {
+  border-bottom: 5px solid $ink;
+  box-shadow: 0 5px 0 $secondary;
+}
+.navbar-brand, .navbar .nav-link, .navbar .navbar-title {
+  font-family: Impact, "Arial Black", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.navbar .nav-link.active, .navbar .nav-link:hover { color: #fff !important; }
+
+#quarto-sidebar, .sidebar-navigation {
+  border-right: 5px solid $ink;
+}
+#quarto-sidebar .sidebar-item a, .sidebar-navigation a { font-weight: 700; text-decoration: none; }
+#quarto-sidebar .sidebar-item a.active, .sidebar-navigation a.active { color: $primary; border-left: 5px solid $primary; padding-left: 0.4em; }
+#quarto-sidebar .chapter-number { color: $primary; }
+
+nav[role="doc-toc"] a { font-weight: 700; text-decoration: none; }
+nav[role="doc-toc"] a.active { color: $primary; border-left: 4px solid $primary; }
+
+.nav-footer {
+  border-top: 5px solid $ink;
+  font-weight: 700;
+  a { color: $secondary; }
+}
+.nav-page .pagination-link { font-weight: 700; }
+
+// book chapter numbers inside the boxed headings keep the heading colour
+.header-section-number { color: inherit; }
+
+// listing cards (blog / homepage grids)
+.quarto-grid-item.card, .quarto-post .card {
+  border: 4px solid $ink;
+  border-radius: 0;
+  box-shadow: 7px 7px 0 $secondary;
+  background: white;
+}
+.card-title, .listing-title { font-family: Impact, "Arial Black", sans-serif; text-transform: uppercase; color: $primary; }
+.listing-category { background: $secondary; color: $ink; border: 2px solid $ink; border-radius: 0; font-weight: 700; }
+
+/* ---------- webexercises (needs webex.css / webex.js) ---------- */
+// `body` in front of the selectors so these win over webex.css, whatever the load order.
+body {
+  --correct: #037e37;
+  --correct_alpha: #05ba12;
+  --incorrect: #d92323;
+  --incorrect_alpha: #E03E3E;
+  --highlight: #8A2BE2;
+}
+body .webex-box {
+  border: 5px solid $ink;
+  border-radius: 0;
+  background: white;
+  box-shadow: 7px 7px 0 $secondary;
+  padding: 0.8em 1em;
+}
+body input.webex-solveme, body .webex-select, body .webex-radiogroup label {
+  border-radius: 0;
+  font-weight: 700;
+  color: $ink;
+}
+body .webex-correct, body input.webex-solveme.webex-correct, body .webex-radiogroup label.webex-correct {
+  border: 3px solid $ink;
+  border-radius: 0;
+  background-color: var(--correct_alpha);
+}
+body .webex-incorrect, body input.webex-solveme.webex-incorrect, body .webex-radiogroup label.webex-incorrect {
+  border: 3px solid $ink;
+  border-radius: 0;
+  background-color: var(--incorrect_alpha);
+}
+body .webex-solution button, body .webex-check-button {
+  border: 4px solid $ink;
+  border-radius: 0;
+  background-color: $secondary;
+  color: $ink;
+  font-family: Impact, "Arial Black", sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 $primary;
+}
+body .webex-solution.open { border: 4px solid $ink; border-radius: 0; background: white; }
+
+/* ---------- webexercises: comic result badges instead of the emoji ---------- */
+// correct = green "BAM!", incorrect = red "ZONK!"
+// Change the words in the two `content:` lines.
+body .webex-correct + .webex-icon::after,
+body .webex-correct span::before,
+body .webex-incorrect + .webex-icon::after,
+body .webex-incorrect span::before {
+  display: inline-block;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  padding: 0.05em 0.45em;
+  margin: 0 0.5em;
+  border: 3px solid $ink;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+body .webex-correct + .webex-icon::after,
+body .webex-correct span::before {
+  content: "BAM!";
+  background: #05ba12;
+  color: #F5F5F5;
+  -webkit-text-stroke: 4px $ink;
+  paint-order: stroke fill;
+  box-shadow: 3px 3px 0 $secondary;
+  transform: rotate(-4deg);
+}
+body .webex-incorrect + .webex-icon::after,
+body .webex-incorrect span::before {
+  content: "ZONK!";
+  background: #E03E3E;
+  color: #F5F5F5;
+  -webkit-text-stroke: 4px $ink;
+  paint-order: stroke fill;
+  box-shadow: 3px 3px 0 $secondary;
+  transform: rotate(3deg);
+}
+// before the answers are checked: no badge
+body .unchecked .webex-correct + .webex-icon::after,
+body .unchecked .webex-correct span::before,
+body .unchecked .webex-incorrect + .webex-icon::after,
+body .unchecked .webex-incorrect span::before {
+  content: "";
+  display: none;
+}
+body .webex-total_correct {
+  font-family: Impact, "Arial Black", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $primary;
+}
+
+/* ---------- Buttons, e.g. the PDF download: [Download PDF](file.pdf){.btn .btn-download} ---------- */
+a.btn {
+  font-family: Impact, "Arial Black", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 4px solid $ink !important;
+  border-radius: 0 !important;
+  box-shadow: 5px 5px 0 $primary;
+  text-decoration: none;
+}
+a.btn:hover { transform: translate(2px, 2px); box-shadow: 3px 3px 0 $primary; }
+a.btn-primary, a.btn-primary:hover { background-color: $primary !important; color: $secondary !important; }
+a.btn-download, a.btn-download:hover { background-color: $secondary !important; color: $ink !important; }
+a.btn-download::before { content: "\2193  "; }
+
+/* ---------- Mermaid diagrams ---------- */
+// Thick comic outlines, hard purple shadows. Colour single nodes in the diagram with classDef.
+.node rect, .node polygon, .node circle, .node ellipse, .node path {
+  stroke: $ink !important;
+  stroke-width: 4px !important;
+  filter: drop-shadow(5px 5px 0 $primary);
+}
+.edgePath .path, .flowchart-link, .messageLine0, .messageLine1, .relation {
+  stroke: $edge !important;
+  stroke-width: 3px !important;
+}
+.marker, marker path { fill: $edge !important; stroke: $edge !important; }
+// Text: black inside nodes and on edge labels (gold caption behind the edge text)
+svg[aria-roledescription] text, svg[aria-roledescription] tspan,
+.nodeLabel, .nodeLabel *, .label, .label *, .edgeLabel, .edgeLabel * {
+  fill: $ink !important;
+  color: $ink !important;
+  font-weight: 700;
+}
+.edgeLabel, .edgeLabel rect, .labelBkg { background-color: $secondary !important; fill: $secondary !important; }
+// Text that sits on the page background (group titles, sequence messages): same as the lines
+.cluster-label, .cluster-label *, .messageText, .loopText, .titleText {
+  fill: $edge !important;
+  color: $edge !important;
+}
+.cluster rect { fill: transparent !important; stroke: $primary !important; stroke-width: 4px !important; }
+rect.actor, .actor { fill: $secondary !important; stroke: $ink !important; stroke-width: 3px !important; }
+.actor-line { stroke: $edge !important; stroke-width: 2px !important; }
+.note { fill: $tertiary !important; stroke: $ink !important; stroke-width: 3px !important; }
+.labelBox { fill: $primary !important; stroke: $ink !important; }
+.labelText { fill: $secondary !important; }
+
+/* ---------- Homepage: hero + section cards (index.qmd) ---------- */
+// An empty `title: ""` must not leave an empty purple box behind.
+h1.title:empty, .quarto-title-block:has(.title:empty) { display: none; }
+
+// no anchor icons next to headings, no sideways scrolling, some side padding
+// (note: this hides the anchor link completely and therefore overrides the "clickable headlines" rule above)
+.anchorjs-link,
+h1.title a,
+.quarto-title a,
+.quarto-title-block a {
+  display: none !important;
+}
+html { overflow-x: hidden; }
+main.content { padding-left: 2rem; padding-right: 2rem; }
+
+.hero {
+  background: $primary;
+  border: 6px solid $ink;
+  box-shadow: 10px 10px 0 $warning;
+  padding: 3rem 2rem;
+  margin: 1rem 0 3.5rem 0;
+  text-align: center;
+  h1 {
+    position: relative;
+    display: inline-block;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0 0 0.9rem 0;
+    margin: 0 0 0.75rem 0;
+    color: $secondary;
+    font-size: 2.7rem;
+    text-shadow: 4px 4px 0 $ink;
+    // accent bar under the title
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 72px;
+      height: 6px;
+      background: $secondary;
+      border: 2px solid $ink;
+    }
+  }
+  p {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    max-width: 640px;
+    margin: 0.9rem auto 0 auto;
+  }
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.section-card {
+  position: relative;
+  background: white;
+  border: 5px solid $ink;
+  box-shadow: 8px 8px 0 $secondary;
+  padding: 1.4rem 1.5rem 1.6rem;
+  transition: transform 0.1s, box-shadow 0.1s;
+  &:hover { transform: translate(3px, 3px); box-shadow: 5px 5px 0 $secondary; }
+  h3 {
+    display: block;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 1rem 0 0.4rem;
+    color: $primary;
+    text-shadow: none;
+    font-size: 1.5rem;
+  }
+  p { font-size: 0.98rem; margin: 0 0 0.85rem 0; }
+  // visible "Mehr erfahren" link = comic button
+  a:not(.card-overlay-link) {
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    background: $secondary;
+    color: $ink;
+    border: 3px solid $ink;
+    box-shadow: 3px 3px 0 $primary;
+    padding: 0.15em 0.8em;
+    font-family: Impact, "Arial Black", sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  // invisible link that makes the whole card clickable
+  .card-overlay-link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    text-decoration: none;
+  }
+  p:has(> .card-overlay-link) { margin: 0; }
+}
+
+.icon-badge {
+  display: grid;
+  place-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  background: $secondary;
+  color: $ink;
+  border: 4px solid $ink;
+  box-shadow: 4px 4px 0 $primary;
+  transform: rotate(-4deg);
+  margin-bottom: 0.75rem;
+  svg { width: 2.4rem; height: 2.4rem; stroke-width: 2.2; }
+}
+.section-card:nth-child(2) .icon-badge { background: $tertiary; transform: rotate(3deg); }
+.section-card:nth-child(3) .icon-badge { background: #FF4DA6; transform: rotate(-2deg); }
+
+// responsive
+@media (max-width: 800px) {
+  main.content { padding-left: 1rem; padding-right: 1rem; }
+  .section-grid { grid-template-columns: 1fr; }
+  .hero { padding: 3rem 1.25rem; }
+  .hero h1 { font-size: 2rem; }
+}

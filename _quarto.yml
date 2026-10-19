@@ -9,11 +9,15 @@ website:
 
 lang: de
 author: "Prof. Dr. David F. Urschler"
-license: "CC BY" EOF
-cat > LICENSE << 'EOF'
-Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-Copyright (c) 2026 Prof. Dr. David F. Urschler
-
-This work is licensed under the Creative Commons Attribution 4.0 International License.
-To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/
+format:
+  revealjs:
+    slide-number: true
+    code-line-numbers: true
+    chalkboard: true
+    theme: themes/batman1966-revealjs.scss
+    css: themes/batman1966.css
+    width: 1280
+    height: 720
+    margin: 0.06
+    embed-resources: false

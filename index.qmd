@@ -1,39 +1,53 @@
 ---
-title: "Statistics for Superheroes"
-subtitle: "Folien zur Vorlesung"
+author: ""
 format:
   html:
-    theme: batman1966-html.scss
+    theme: themes/batman1966-html.scss
     toc: false
+    back-to-top-navigation: true
     page-layout: article
     embed-resources: false
 ---
 
+![](pics/01_logos/r_signal_wide.png)
+
+# Willkommen
+
 ::: {.comic-panel}
-Willkommen! Hier findest du alle Folien als Webseite.
-Klicke auf einen Button, um die Folien zu öffnen.
+Hier findest du alle [Folien](#folien) zu meinen Statistikverantstaltungen.\
+
+Momentan sind zur Anwendung in *R* hier.\ 
+
+Die Folien werden laufend ergänzt.
+
+Wenn Du Fragen hast, Fehler (vor allem Tippfehler) etc., dann schreib mir.
 :::
+
+## Mögliche Fragen 
+
+<br>
+
+[Wie kann ich mit diesen Folien arbeiten?]{.bat-bubble .inverse}
+
+Wie mit allen Folien auch. Wenn du sie drucken möchtest, dann drücke `e` und du kannst die Folien als pdf herunterladen.
+
 
 ## Folien
 
+### *02 R als Programmiersprache*
+
 ::: {.comic-panel}
-**02 R Language**
+Wie wird aus einer Tabelle voller Zahlen eine aussagekräftige statistische Analyse? Genau das lernst du mit *R*! In dieser Sitzung machst du deine ersten Schritte mit der Programmiersprache: Du führst Berechnungen durch, prüfst logische Aussagen und lernst hilfreiche Funktionen kennen. Anschließend wendest du dein Wissen direkt an, um Daten aus der Psychologie zu beschreiben und zu visualisieren. Keine Sorge, du musst noch kein Programmierprofi sein. Wir starten mit den Grundlagen und bauen Schritt für Schritt darauf auf.
 
 [Folien öffnen](02_r_language.html){.btn .btn-primary}
 :::
 
+<br>
+
+
+### *03 Objekte in R*
 ::: {.comic-panel}
-**03 R Objekte**
+Objekte sind das Herzstück der Arbeit mit *R*. Sie ermöglichen dir, Informationen zu "speichern", zu organisieren und jederzeit wiederzuverwenden. In dieser Sitzung lernst du, welche verschiedenen Objekttypen es gibt, wie du sie erstellst und wie du mit ihnen arbeitest. Schritt für Schritt bekommst du ein Gefühl dafür, wie Objekte dir dein Leben erleichtern.
 
 [Folien öffnen](03_r_objekte.html){.btn .btn-primary}
-:::
-
-::: {.callout-tip}
-## Tipp
-Drücke in den Folien `F` für Vollbild, `S` für die Sprechernotizen und `O` für die Übersicht.
-:::
-
-::: {.callout-note}
-## Hinweis
-Dieses Material ist Teil der Lehrveranstaltung von Prof. Dr. David F. Urschler.
 :::

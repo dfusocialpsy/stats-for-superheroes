@@ -40,7 +40,7 @@ objekt_01
 <br>
 Das Objekt erscheint im *Environment*-Fenster (RStudio) und kann aufgerufen werden.
 <br>
-Shortcut: "Option/Alt" + "-"
+Shortcut: "Option" / "Alt" + "-"
 
 
 # Welche Objekttypen gibt es?
