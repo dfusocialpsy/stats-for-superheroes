@@ -18,7 +18,7 @@
     "href": "03_r_objekte.html#erstellen-eines-objekts",
     "title": "03 Objekte",
     "section": "Erstellen eines Objekts",
-    "text": "Erstellen eines Objekts\nHierfür nutzen wir den “Assign-Operator” &lt;-\n\n\nobjekt_01 &lt;- c(2, 4, 8)\nobjekt_01\n\n\n[1] 2 4 8\n\n\n Das Objekt erscheint im Environment-Fenster (RStudio) und kann aufgerufen werden.  Shortcut: “Option/Alt” + “-”"
+    "text": "Erstellen eines Objekts\nHierfür nutzen wir den “Assign-Operator” &lt;-\n\n\nobjekt_01 &lt;- c(2, 4, 8)\nobjekt_01\n\n\n[1] 2 4 8\n\n\n Das Objekt erscheint im Environment-Fenster (RStudio) und kann aufgerufen werden.  Shortcut: “Option” / “Alt” + “-”"
   },
   {
     "objectID": "03_r_objekte.html#welche-objekttypen-gibt-es-1",
@@ -424,7 +424,7 @@
     "href": "02_r_language.html#funktionen-8",
     "title": "02 R als Programmiersprache",
     "section": "Funktionen",
-    "text": "Funktionen\nGeht das auch übersichtlicher?\nJa, mit der Pipe |&gt;\nShortcut: cmd/strg + shift + m\n\n\nc(1, 4, 5, 2, 2, 534) |&gt; \n    mean() |&gt; \n    round()"
+    "text": "Funktionen\nGeht das auch übersichtlicher?\nJa, mit der Pipe |&gt;\nShortcut: “CMD” / “Strg” + “Shift” + “m”\n\n\nc(1, 4, 5, 2, 2, 534) |&gt; \n    mean() |&gt; \n    round()"
   },
   {
     "objectID": "02_r_language.html#teil-1",
@@ -455,10 +455,17 @@
     "text": "Teil 4\n\n\n\nBerechnen Sie\n\nModus\nMedian\narithmetisches Mittel\nQuantile (p25, p75)\n\n\n\n\n\n\nAnzahl von „Das ist wichtig …” pro Vorlesung\n19, 23, 21, 18, 20, 19, 21, 22, 22, 19,\n20, 20, 20, 19, 20, 20, 23, 21, 19, 18"
   },
   {
+    "objectID": "index.html#mögliche-fragen",
+    "href": "index.html#mögliche-fragen",
+    "title": "Willkommen",
+    "section": "Mögliche Fragen",
+    "text": "Mögliche Fragen\n\nWie kann ich mit diesen Folien arbeiten?\nWie mit allen Folien auch. Wenn du sie drucken möchtest, dann drücke e und du kannst die Folien als pdf herunterladen."
+  },
+  {
     "objectID": "index.html#folien",
     "href": "index.html#folien",
-    "title": "Statistics for Superheroes",
+    "title": "Willkommen",
     "section": "Folien",
-    "text": "Folien\n\n02 R Language\n03 R Objekte"
+    "text": "Folien\n\n02 R als Programmiersprache\n\nWie wird aus einer Tabelle voller Zahlen eine aussagekräftige statistische Analyse? Genau das lernst du mit R! In dieser Sitzung machst du deine ersten Schritte mit der Programmiersprache: Du führst Berechnungen durch, prüfst logische Aussagen und lernst hilfreiche Funktionen kennen. Anschließend wendest du dein Wissen direkt an, um Daten aus der Psychologie zu beschreiben und zu visualisieren. Keine Sorge, du musst noch kein Programmierprofi sein. Wir starten mit den Grundlagen und bauen Schritt für Schritt darauf auf.\nFolien öffnen\n\n\n\n\n03 Objekte in R\n\nObjekte sind das Herzstück der Arbeit mit R. Sie ermöglichen dir, Informationen zu “speichern”, zu organisieren und jederzeit wiederzuverwenden. In dieser Sitzung lernst du, welche verschiedenen Objekttypen es gibt, wie du sie erstellst und wie du mit ihnen arbeitest. Schritt für Schritt bekommst du ein Gefühl dafür, wie Objekte dir dein Leben erleichtern.\nFolien öffnen"
   }
 ]
