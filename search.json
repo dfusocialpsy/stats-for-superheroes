@@ -455,6 +455,251 @@
     "text": "Teil 4\n\n\n\nBerechnen Sie\n\nModus\nMedian\narithmetisches Mittel\nQuantile (p25, p75)\n\n\n\n\n\n\nAnzahl von „Das ist wichtig …” pro Vorlesung\n19, 23, 21, 18, 20, 19, 21, 22, 22, 19,\n20, 20, 20, 19, 20, 20, 23, 21, 19, 18"
   },
   {
+    "objectID": "01_r_intro_1.html#agenda",
+    "href": "01_r_intro_1.html#agenda",
+    "title": "01 Spaß mit ",
+    "section": "Agenda",
+    "text": "Agenda\n\nWarum ?\nWo bekomme ich  her?\nWie funktioniert der Spass?\nGood Practices\nWo bekomme ich Hilfe?\nFragen?"
+  },
+  {
+    "objectID": "01_r_intro_1.html#warum-r",
+    "href": "01_r_intro_1.html#warum-r",
+    "title": "01 Spaß mit ",
+    "section": "Warum R?",
+    "text": "Warum R?\nIch möchte doch nur einfach Analysen rechnen, reicht da nicht Excel? Grundsätzlich ja, aber es gibt 10 gute Gründe zu lerenen."
+  },
+  {
+    "objectID": "01_r_intro_1.html#gründe-r-zu-lernen",
+    "href": "01_r_intro_1.html#gründe-r-zu-lernen",
+    "title": "01 Spaß mit ",
+    "section": "10 Gründe R zu lernen",
+    "text": "10 Gründe R zu lernen\n kann über verschiedene Plattformen hinweg genutzt werden\n ist ein Sprache von Statistiker*innen für Statistiker*innen\n wird in der Praxis immer stärker nachgefragt\n hat eine riesige und hilfsbereite Community\n großartige Möglichkeiten zur Visualisierung\n unzählige Erweiterungsmöglichkeiten\n wird in großen Firmen genutzt\n hilft dabei Geld zu verdienen\n kann interaktive Web-Apps\n ist open source"
+  },
+  {
+    "objectID": "01_r_intro_1.html#wo-bekomme-ich-r-überhaupt-her",
+    "href": "01_r_intro_1.html#wo-bekomme-ich-r-überhaupt-her",
+    "title": "01 Spaß mit ",
+    "section": "Wo bekomme ich R überhaupt her?",
+    "text": "Wo bekomme ich R überhaupt her?\n\n herunterladen\n installieren\nPrüfen ob  läuft\n\n\n\n\n\nCRAN steht für Comprehensive R Archive Network"
+  },
+  {
+    "objectID": "01_r_intro_1.html#wenn-es-funktioniert-dann",
+    "href": "01_r_intro_1.html#wenn-es-funktioniert-dann",
+    "title": "01 Spaß mit ",
+    "section": "Wenn es funktioniert, dann …",
+    "text": "Wenn es funktioniert, dann …\n\n\n\n\n\n\n\n\nDas sieht hervorragend aus!"
+  },
+  {
+    "objectID": "01_r_intro_1.html#r-studio-macht-alles-erträglicher",
+    "href": "01_r_intro_1.html#r-studio-macht-alles-erträglicher",
+    "title": "01 Spaß mit ",
+    "section": "R-Studio macht alles erträglicher",
+    "text": "R-Studio macht alles erträglicher\n\n herunterladen\n installieren\nPrüfen ob  läuft\n\n\n\n\n\n ist ein Editor für ."
+  },
+  {
+    "objectID": "01_r_intro_1.html#so-sieht-r-studio-aus",
+    "href": "01_r_intro_1.html#so-sieht-r-studio-aus",
+    "title": "01 Spaß mit ",
+    "section": "So sieht R-Studio aus",
+    "text": "So sieht R-Studio aus"
+  },
+  {
+    "objectID": "01_r_intro_1.html#wo-finde-ich-was-ich-brauche",
+    "href": "01_r_intro_1.html#wo-finde-ich-was-ich-brauche",
+    "title": "01 Spaß mit ",
+    "section": "Wo finde ich was ich brauche?",
+    "text": "Wo finde ich was ich brauche?\n\nConsole\nScript\nEnvironment\nFiles/Plots/Packages/Help/Viewer"
+  },
+  {
+    "objectID": "01_r_intro_1.html#ein-paar-dinge-müssen-wir-konfigurieren",
+    "href": "01_r_intro_1.html#ein-paar-dinge-müssen-wir-konfigurieren",
+    "title": "01 Spaß mit ",
+    "section": "Ein paar Dinge müssen wir konfigurieren",
+    "text": "Ein paar Dinge müssen wir konfigurieren"
+  },
+  {
+    "objectID": "01_r_intro_1.html#ein-paar-dinge-können-wir-konfigurieren",
+    "href": "01_r_intro_1.html#ein-paar-dinge-können-wir-konfigurieren",
+    "title": "01 Spaß mit ",
+    "section": "Ein paar Dinge können wir konfigurieren",
+    "text": "Ein paar Dinge können wir konfigurieren"
+  },
+  {
+    "objectID": "01_r_intro_1.html#console",
+    "href": "01_r_intro_1.html#console",
+    "title": "01 Spaß mit ",
+    "section": "Console",
+    "text": "Console\n\nHier könn(t)en wir alles erledigen\nbeim Start gibt es eine Versionsinfo\n&gt; „der Prompt” = Eingabeaufforderung\nhinter dem Prompt kann „gearbeitet” werden, z.B. 1 - 8\nmit „Enter” wird der Befehl ausgeführt"
+  },
+  {
+    "objectID": "01_r_intro_1.html#console---ausgabe",
+    "href": "01_r_intro_1.html#console---ausgabe",
+    "title": "01 Spaß mit ",
+    "section": "Console - Ausgabe",
+    "text": "Console - Ausgabe\nAusgabe beginnt mit [1]\n\nhat nichts mit dem Ergebnis zu tun,\nsondern nummeriert die Ergebnisse\n\nSehen wir:\n\n&gt; alles gut!\n+ läuft noch ein Befehl"
+  },
+  {
+    "objectID": "01_r_intro_1.html#console---aufräumen",
+    "href": "01_r_intro_1.html#console---aufräumen",
+    "title": "01 Spaß mit ",
+    "section": "Console - Aufräumen",
+    "text": "Console - Aufräumen\n\nNach vielen Rechnungen wird die Console schnell unübersichtlich\nConsole enthält alle Befehle (inkl. Warn- und Fehlermeldung)\n\nAufräumen mit\nShortcut: “CMD” / “Strg” + “L”"
+  },
+  {
+    "objectID": "01_r_intro_1.html#script---erstellen-und-ausführen",
+    "href": "01_r_intro_1.html#script---erstellen-und-ausführen",
+    "title": "01 Spaß mit ",
+    "section": "Script - Erstellen und Ausführen",
+    "text": "Script - Erstellen und Ausführen\n\nFile → New File → R-Script\nIm Script können Befehle eingegeben werden\nCursor „in den Befehl setzen”\n“CMD” / “Strg” + “Enter”\noder: Button Run in der Script-Leiste"
+  },
+  {
+    "objectID": "01_r_intro_1.html#script---speichern",
+    "href": "01_r_intro_1.html#script---speichern",
+    "title": "01 Spaß mit ",
+    "section": "Script - Speichern",
+    "text": "Script - Speichern\n\nFile → Save\noder: “CMD” / “Strg” + “s”\noder: File → Save As…\nScripte werden wiederverwendbar bzw. sind einfach zu modifizieren\nFrage nach Encoding (Sonderzeichen) → einmalig"
+  },
+  {
+    "objectID": "01_r_intro_1.html#environment",
+    "href": "01_r_intro_1.html#environment",
+    "title": "01 Spaß mit ",
+    "section": "Environment",
+    "text": "Environment\n\nEs werden alle Objekte angezeigt\nHistory: alle Befehle (chronologisch)\nConnections: Verbindungen"
+  },
+  {
+    "objectID": "01_r_intro_1.html#filesplotspackageshelpviewer",
+    "href": "01_r_intro_1.html#filesplotspackageshelpviewer",
+    "title": "01 Spaß mit ",
+    "section": "Files/Plots/Packages/Help/Viewer",
+    "text": "Files/Plots/Packages/Help/Viewer\n\nFiles: Explorer/Finder\nPlots: Abbildungen\nPackages: Liste der installierten Pakete\nHelp: Hilfe\nViewer: …"
+  },
+  {
+    "objectID": "01_r_intro_1.html#packages",
+    "href": "01_r_intro_1.html#packages",
+    "title": "01 Spaß mit ",
+    "section": "Packages",
+    "text": "Packages\n\nbringt viele Funktionen mit, die genutzt werden können\nGrundfunktionen können mit Packages erweitert werden\nFür (fast) alles gibt es ein Package\nEs gibt ca. 25387 Packages"
+  },
+  {
+    "objectID": "01_r_intro_1.html#wie-bekomme-ich-nun-diese-packages",
+    "href": "01_r_intro_1.html#wie-bekomme-ich-nun-diese-packages",
+    "title": "01 Spaß mit ",
+    "section": "Wie bekomme ich nun diese Packages?",
+    "text": "Wie bekomme ich nun diese Packages?\n\ndirekt im Script\nüber das Menü: Tools → Install Packages …\nim Packges-Fenster\n\n\n\n\n\n\n\n\nWichtig\n\n\nInformationen nach dem Laden erscheinen in der Console\nManchmal kann es auch zu “Konflikten” zwischen Packages kommen!\n\n\n\nWarum?!"
+  },
+  {
+    "objectID": "01_r_intro_1.html#wie-nutze-ich-diese-packages-nun",
+    "href": "01_r_intro_1.html#wie-nutze-ich-diese-packages-nun",
+    "title": "01 Spaß mit ",
+    "section": "Wie nutze ich diese Packages nun?",
+    "text": "Wie nutze ich diese Packages nun?\n\n\n\nEinmal\nBei jedem Neustart\n\n\n\n\ninstall.packages(\"package.name\")\nlibrary(\"package.name\")"
+  },
+  {
+    "objectID": "01_r_intro_1.html#packages---merkhilfe",
+    "href": "01_r_intro_1.html#packages---merkhilfe",
+    "title": "01 Spaß mit ",
+    "section": "Packages - Merkhilfe",
+    "text": "Packages - Merkhilfe\n\n\n\n\n\n\n\n\n\nR ist „case sensitive” darum Achtung bei der Groß- und Kleinschreibung!"
+  },
+  {
+    "objectID": "01_r_intro_1.html#was-passiert-wenn-r-nicht-aktuell-ist",
+    "href": "01_r_intro_1.html#was-passiert-wenn-r-nicht-aktuell-ist",
+    "title": "01 Spaß mit ",
+    "section": "Was passiert, wenn R nicht „aktuell” ist?",
+    "text": "Was passiert, wenn R nicht „aktuell” ist?\n\nbei „kleineren Sprüngen” (4.5.0 auf 4.5.1) gibt es keine Probleme\nbei größeren sollten Sie  (inklusive Packages) updaten"
+  },
+  {
+    "objectID": "01_r_intro_1.html#good-practices---dateinamen",
+    "href": "01_r_intro_1.html#good-practices---dateinamen",
+    "title": "01 Spaß mit ",
+    "section": "Good Practices - Dateinamen",
+    "text": "Good Practices - Dateinamen\n\nkeine kryptischen, sondern eindeutige Namen\nNicht: „auswertung132bmg.R” → „coda_ue01_v01.R”\nkurze Namen → nutzen Sie immer dieselben Abkürzungen\nz.B. „coda” für computerunterstützte Datenauswertung\nkeine Sonderzeichen\nnutzen Sie sequentielle Nummerierung\n→ 01, 02, … statt 1, 2, …"
+  },
+  {
+    "objectID": "01_r_intro_1.html#good-practices---syntax",
+    "href": "01_r_intro_1.html#good-practices---syntax",
+    "title": "01 Spaß mit ",
+    "section": "Good Practices - Syntax",
+    "text": "Good Practices - Syntax\n\nObjektnamen\nSpacing\nEinrückungen\nLange Zeilen\nKommentare"
+  },
+  {
+    "objectID": "01_r_intro_1.html#syntax---objektnamen",
+    "href": "01_r_intro_1.html#syntax---objektnamen",
+    "title": "01 Spaß mit ",
+    "section": "Syntax - Objektnamen",
+    "text": "Syntax - Objektnamen\n\n\nGut\n\nobjekt_01\ntag_01\n\n\nSchlecht\n\nObjekt1\nTagttes"
+  },
+  {
+    "objectID": "01_r_intro_1.html#syntax---spacing",
+    "href": "01_r_intro_1.html#syntax---spacing",
+    "title": "01 Spaß mit ",
+    "section": "Syntax - Spacing",
+    "text": "Syntax - Spacing\n\n\nGut\n\nx &lt;- data.frame(x = 1:10, y = 10:1)\n\nx[, 1]\n\n\nmean(x, na.rm = TRUE)\n\n\nage_r &lt;- (second / 3600) + 12\n\n\nSchlecht\n\nx&lt;-data.frame(x=1:10,y=10:1)\n\nx[,1]\nx[ ,1]\n\nmean (x, na.rm = TRUE)\nmean( x, na.rm = TRUE )\n\nage_r&lt;-(second/3600)+12"
+  },
+  {
+    "objectID": "01_r_intro_1.html#syntax---einrückungen",
+    "href": "01_r_intro_1.html#syntax---einrückungen",
+    "title": "01 Spaß mit ",
+    "section": "Syntax - Einrückungen",
+    "text": "Syntax - Einrückungen\nOhne Einrückungen und Leerzeichen wird Code kaum lesbar\n\nds|&gt;\nselect(id,starts_with(\"er\"),-er_mean)|&gt;\npivot_longer(-id)|&gt;\nggplot(aes(y=value,x=\"\"))+\nposition=position_jitter(width=-.9,side=\"l\",size=.5,alpha=0.8)"
+  },
+  {
+    "objectID": "01_r_intro_1.html#syntax---lange-zeilen",
+    "href": "01_r_intro_1.html#syntax---lange-zeilen",
+    "title": "01 Spaß mit ",
+    "section": "Syntax - Lange Zeilen",
+    "text": "Syntax - Lange Zeilen\nLange Zeilen umbrechen, damit der gesamte Code ohne Scrollen sichtbar ist\n\nds |&gt;\n  select(\n    id,\n    starts_with(\"er\"),\n    -er_mean) |&gt;\n  pivot_longer(-id) |&gt;\n  ggplot(\n    aes(\n        y = value,\n         x = \"\")\n)"
+  },
+  {
+    "objectID": "01_r_intro_1.html#syntax---kommentare",
+    "href": "01_r_intro_1.html#syntax---kommentare",
+    "title": "01 Spaß mit ",
+    "section": "Syntax - Kommentare",
+    "text": "Syntax - Kommentare\nWie soll ich nach einem halben Jahr noch wissen,was das alles bedeutet?\n\nds |&gt; # Name des verwendeten Datensatzes\n  select(id,\n         starts_with(\"er\"),    # verwende die folgenden Spalten\n         -er_mean) |&gt;          # lass die Spalte \"er_mean\" weg\n  pivot_longer(-id) |&gt;         # Restrukturierung des Datensatzes\n  ggplot(aes(y = value,        # Produziere einen Plot\n             x = \"\")) +\n  ..."
+  },
+  {
+    "objectID": "01_r_intro_1.html#wo-bekomme-ich-hilfe-1",
+    "href": "01_r_intro_1.html#wo-bekomme-ich-hilfe-1",
+    "title": "01 Spaß mit ",
+    "section": "Wo bekomme ich Hilfe?",
+    "text": "Wo bekomme ich Hilfe?\n\nDirekt in R-Studio\nSocial Media\nCheatsheets\nBücher\nForen\nKI"
+  },
+  {
+    "objectID": "01_r_intro_1.html#direkt-in-r-studio",
+    "href": "01_r_intro_1.html#direkt-in-r-studio",
+    "title": "01 Spaß mit ",
+    "section": "Direkt in R-Studio",
+    "text": "Direkt in R-Studio\n\n?mean          # Hilfeseite zu einer Funktion\nhelp(\"mean\")   # gleichbedeutend\n\noder Reiter Help im Fenster „Files/Plots/Packages/Help/Viewer”"
+  },
+  {
+    "objectID": "01_r_intro_1.html#cheatsheets",
+    "href": "01_r_intro_1.html#cheatsheets",
+    "title": "01 Spaß mit ",
+    "section": "Cheatsheets",
+    "text": "Cheatsheets"
+  },
+  {
+    "objectID": "01_r_intro_1.html#bücher",
+    "href": "01_r_intro_1.html#bücher",
+    "title": "01 Spaß mit ",
+    "section": "Bücher",
+    "text": "Bücher"
+  },
+  {
+    "objectID": "01_r_intro_1.html#meine-empfehlung",
+    "href": "01_r_intro_1.html#meine-empfehlung",
+    "title": "01 Spaß mit ",
+    "section": "Meine Empfehlung",
+    "text": "Meine Empfehlung"
+  },
+  {
+    "objectID": "01_r_intro_1.html#hier-ein-paar-nützliche-links",
+    "href": "01_r_intro_1.html#hier-ein-paar-nützliche-links",
+    "title": "01 Spaß mit ",
+    "section": "Hier ein paar nützliche Links",
+    "text": "Hier ein paar nützliche Links\n\nR for the Rest of Us\nR for Data Science\nR-Suchmaschine\nBig Book of R\nStackoverflow\nCheatsheets"
+  },
+  {
     "objectID": "index.html#mögliche-fragen",
     "href": "index.html#mögliche-fragen",
     "title": "Willkommen",

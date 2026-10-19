@@ -77,3 +77,16 @@ li::marker { color: var(--warning); }
 
 /* all comic tags: white letters with a black outline */
 .pow, .bam, .zap, .zok, .ouch { color: #fff; -webkit-text-stroke: 5px var(--ink); paint-order: stroke fill; }
+
+/* Create a logo class for R, Quarto, etc.  */ 
+img.logo {
+  display: inline-block;
+  height: 1em;            /* logo height = text height; use 1.2em for a bit bigger */
+  width: auto;            /* keeps the aspect ratio */
+  margin: 0 0.10em;
+  vertical-align: -0.10em;  /* sits on the text baseline */
+  border: 0;
+  box-shadow: none;       /* switches off the theme's image frame and shadow */
+  background: none;
+}
+img.logo-lg { height: 2em; }
