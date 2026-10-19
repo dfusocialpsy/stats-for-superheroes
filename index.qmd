@@ -1,8 +1,39 @@
 ---
 title: "Statistics for Superheroes"
+subtitle: "Folien zur Vorlesung"
+format:
+  html:
+    theme: batman1966-html.scss
+    toc: false
+    page-layout: article
+    embed-resources: false
 ---
+
+::: {.comic-panel}
+Willkommen! Hier findest du alle Folien als Webseite.
+Klicke auf einen Button, um die Folien zu öffnen.
+:::
 
 ## Folien
 
-- [02 R Language](02_r_language.html)
-- [03 R Objekte](03_r_objekte.html)
+::: {.comic-panel}
+**02 R Language**
+
+[Folien öffnen](02_r_language.html){.btn .btn-primary}
+:::
+
+::: {.comic-panel}
+**03 R Objekte**
+
+[Folien öffnen](03_r_objekte.html){.btn .btn-primary}
+:::
+
+::: {.callout-tip}
+## Tipp
+Drücke in den Folien `F` für Vollbild, `S` für die Sprechernotizen und `O` für die Übersicht.
+:::
+
+::: {.callout-note}
+## Hinweis
+Dieses Material ist Teil der Lehrveranstaltung von Prof. Dr. David F. Urschler.
+:::
