@@ -59,7 +59,7 @@ log(9245)
 
 ## R als Taschenrechner
 
- *R* befolgt automatisch Rechenregeln  → darum Klammersetzung beachten!
+ *R* befolgt automatisch Rechenregeln → darum Klammersetzung beachten!
 
 ```{r}
 #| output-location: column
