@@ -34,10 +34,21 @@ Wie mit allen Folien auch. Wenn du sie drucken möchtest, dann drücke `e` und d
 
 ## Folien
 
+### *01 Spass mit R*
+
+::: {.comic-panel}
+Wie kannst du aus Daten spannende Erkenntnisse über menschliches Erleben und Verhalten gewinnen? Mit *R* legst du den Grundstein dafür! Du lerns die wichtigsten Grundlagen der Programmiersprache kennen und probierst sie direkt selbst aus. Du brauchst dafür keine Programmiererfahrung. Neugier und die Bereitschaft, Neues auszuprobieren sind die besten Voraussetzungen.
+
+[Folien öffnen](01_r_intro.html){.btn .btn-primary}
+:::
+
+<br>
+
+
 ### *02 R als Programmiersprache*
 
 ::: {.comic-panel}
-Wie wird aus einer Tabelle voller Zahlen eine aussagekräftige statistische Analyse? Genau das lernst du mit *R*! In dieser Sitzung machst du deine ersten Schritte mit der Programmiersprache: Du führst Berechnungen durch, prüfst logische Aussagen und lernst hilfreiche Funktionen kennen. Anschließend wendest du dein Wissen direkt an, um Daten aus der Psychologie zu beschreiben und zu visualisieren. Keine Sorge, du musst noch kein Programmierprofi sein. Wir starten mit den Grundlagen und bauen Schritt für Schritt darauf auf.
+Wie wird aus einer Tabelle voller Zahlen eine aussagekräftige statistische Analyse? Genau das lernst du mit *R*! In dieser Sitzung machst du deine ersten Schritte mit der Programmiersprache: Du führst Berechnungen durch, prüfst logische Aussagen und lernst hilfreiche Funktionen kennen. Anschließend wendest du dein Wissen direkt an. Du musst noch kein Programmierprofi sein. Wir starten mit den Grundlagen und bauen Schritt für Schritt darauf auf.
 
 [Folien öffnen](02_r_language.html){.btn .btn-primary}
 :::
